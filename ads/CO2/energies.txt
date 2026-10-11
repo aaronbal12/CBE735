@@ -1,0 +1,5 @@
+folder,E_eV,dE_eV,fmax,steps,status
+bridge,,,,,NOT CONVERGED
+fcc_hollow,,,,,NOT CONVERGED
+hcp_hollow,,,,,NOT CONVERGED
+top,,,,,NOT CONVERGED

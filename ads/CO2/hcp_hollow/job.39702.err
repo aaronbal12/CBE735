@@ -1,0 +1,3 @@
+slurmstepd: error: *** JOB 39702 ON eu54 CANCELLED AT 2026-09-24T13:16:52 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 39702.0 ON eu54 CANCELLED AT 2026-09-24T13:16:52 ***
