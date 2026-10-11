@@ -1,7 +1,7 @@
 """Set up frequency, H2 and gas-phase jobs from converged relaxations.
 
   vib/<ads>_<site>/   IBRION=5 on the relaxed CONTCAR; slab fixed, adsorbate free
-  ads/H2/top/         H2 molecule lying flat over a top Rh (relaxation)
+  ads/H2/<site>/      H2 molecule lying flat over top/bridge/fcc/hcp (relaxation)
   gas/<mol>/relax/    isolated H2, CO, CO2 in a 15 A cubic box (Gamma point)
   gas/<mol>/vib/      frequencies of the isolated molecule (all atoms free)
 
@@ -25,6 +25,17 @@ VIB = {
     "CO_hcp": "ads/CO/hcp_hollow",
     "H2_top": "ads/H2/top",             # molecular H2 (stretched) over top Rh
 }
+
+# H2 lying flat 2.0 A above the top Rh plane: site centre (x, y) and the
+# in-plane unit vector of the H-H axis
+H2_SITES = {
+    "top": ((4.0305086527633209, 2.3270152556440182), (1.0, 0.0)),
+    # across the Rh-Rh bridge (Rh-Rh runs along (0.5, 0.866))
+    "bridge": ((4.7022615, 3.4905229), (0.8660254037844386, -0.5)),
+    "fcc_hollow": ((5.3740115370177612, 3.1026870075253576), (1.0, 0.0)),
+    "hcp_hollow": ((4.0305086527633209, 3.8783587594066966), (1.0, 0.0)),
+}
+D_H2 = 0.751
 
 # Isolated molecules: PBE equilibrium bond lengths (A), centred in the box
 GAS = {
@@ -95,6 +106,17 @@ def make_vib(name, vib_slab, slab_kp):
                  cell, els, cnt, xyz, free)
 
 
+def make_h2_ads(site, relax_slab, slab_kp):
+    cell, els, cnt, xyz = read_poscar(os.path.join(ROOT, "clean", "Rh", "CONTCAR"))
+    z = max(p[2] for p in xyz) + 2.0
+    (x0, y0), (ux, uy) = H2_SITES[site]
+    h = D_H2 / 2
+    h2 = [[x0 - h * ux, y0 - h * uy, z], [x0 + h * ux, y0 + h * uy, z]]
+    d = job_dir(f"ads/H2/{site}", relax_slab, slab_kp)
+    write_poscar(os.path.join(d, "POSCAR"), f"Rh(111) 3x3 + H2 {site} (flat)", cell,
+                 ["Rh", "H"], [N_SLAB, 2], xyz + h2, [False] * N_SLAB + [True] * 2)
+
+
 def main():
     slab_kp = open(os.path.join(ROOT, "files", "KPOINTS")).read()
     gamma_kp = "Gamma point only\n0\nGamma\n1 1 1\n0 0 0\n"
@@ -105,24 +127,22 @@ def main():
     relax_gas = incar("INCAR_relax", ISMEAR="0", **gas_mods)
     vib_gas = incar("INCAR_vib", **gas_mods)
 
-    # Only (re)build the named vib jobs, e.g. `make_vib_jobs.py H2_top`
+    # Only (re)build the named jobs, e.g. `make_vib_jobs.py H2_top ads/H2/bridge`
     if sys.argv[1:]:
         for name in sys.argv[1:]:
-            make_vib(name, vib_slab, slab_kp)
+            if name.startswith("ads/H2/"):
+                make_h2_ads(name.split("/")[-1], relax_slab, slab_kp)
+            else:
+                make_vib(name, vib_slab, slab_kp)
         return
 
     # 1) adsorbate frequencies from converged CONTCARs
     for name in VIB:
         make_vib(name, vib_slab, slab_kp)
 
-    # 2) H2 "adsorption": molecule flat over a top Rh, 2.0 A above it (H-Rh ~2.03 A)
-    cell, els, cnt, xyz = read_poscar(os.path.join(ROOT, "clean", "Rh", "CONTCAR"))
-    z_top = max(p[2] for p in xyz)
-    x0, y0 = 4.0305086527633209, 2.3270152556440182
-    h2 = [[x0 - 0.3755, y0, z_top + 2.0], [x0 + 0.3755, y0, z_top + 2.0]]
-    d = job_dir("ads/H2/top", relax_slab, slab_kp)
-    write_poscar(os.path.join(d, "POSCAR"), "Rh(111) 3x3 + H2 top (flat)", cell,
-                 ["Rh", "H"], [N_SLAB, 2], xyz + h2, [False] * N_SLAB + [True] * 2)
+    # 2) H2 "adsorption": molecule lying flat over each high-symmetry site
+    for site in H2_SITES:
+        make_h2_ads(site, relax_slab, slab_kp)
 
     # 3) isolated molecules in a box: relaxation + frequencies
     box = [[BOX, 0, 0], [0, BOX, 0], [0, 0, BOX]]
