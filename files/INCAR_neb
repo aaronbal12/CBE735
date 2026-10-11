@@ -1,0 +1,33 @@
+General:
+SYSTEM   = transition_metal
+
+ENCUT    = 400 # cutoff energy
+NCORE     = 4
+LCHARG   = .FALSE.
+
+ALGO     = Fast
+NELMIN   = 4
+NELM     = 60
+NELMDL   = -12
+EDIFF    = 1.0E-6 # energy convergence
+
+ISMEAR   = 0
+SIGMA    = 0.1  
+LREAL    = Auto
+
+PREC     = Accurate
+ISYM     = 0
+ISPIN    = 1 # 1: non-spin polarized
+
+NSW      = 100 # number of steps
+IBRION   = 3
+POTIM    = 0.01
+EDIFFG   = -0.2  #change to -0.02 once non-climbing neb converges
+ISIF     = 0
+
+IDIPOL   = 3
+LDIPOL   = .TRUE.
+
+ICHAIN   = 0
+IMAGES   = 7
+LCLIMB   = .FALSE. #change to .TRUE. once non-climbing convergence reached
