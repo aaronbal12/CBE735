@@ -1,0 +1,29 @@
+General:
+SYSTEM   = transition_metal
+
+ENCUT    = 400 # cutoff energy
+NCORE     = 4
+LCHARG   = .FALSE.
+LWAVE	= .FALSE.
+
+ALGO     = Normal
+NELMIN   = 4
+NELM     = 60
+NELMDL   = -12
+EDIFF    = 1.0E-6 # energy convergence
+
+ISMEAR   = 0
+SIGMA    = 0.01
+LREAL    = Auto
+
+PREC     = Accurate
+ISYM     = 0
+ISPIN    = 1 # 1: non-spin polarized
+
+NSW      = 200 # number of steps
+IBRION   = 2
+POTIM    = 0.4
+EDIFFG   = -0.02
+ISIF     = 0
+
+
