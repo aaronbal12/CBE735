@@ -1,19 +1,30 @@
 General:
-  SYSTEM  = Pt 
-  PREC    = Accurate
-  ENCUT   = 400
-  ISMEAR  = 0; SIGMA=0.1 
-  IBRION  = 2
-  NSW     = 200
-  EDIFFG  = -0.02
-  LWAVE   = .FALSE.
-  LCHARG  = .FALSE.
-  ISYM    = 2 
-  NELMDL  = -5
-  VOSKOWN = 1
-  LREAL   = Auto
-  NPAR    = 2
-Dipole:
-  IDIPOL  = 3
-  LDIPOL  = .TRUE.
+SYSTEM   = transition_metal
+
+ENCUT    = 400 # cutoff energy
+NCORE     = 4
+LCHARG   = .FALSE.
+
+ALGO     = Normal
+NELMIN   = 4
+NELM     = 60
+NELMDL   = -12
+EDIFF    = 1.0E-6 # energy convergence
+
+ISMEAR   = 0
+SIGMA    = 0.1  
+LREAL    = Auto
+
+PREC     = Accurate
+ISYM     = 0
+ISPIN    = 1 # 1: non-spin polarized
+
+NSW      = 100 # number of steps
+IBRION   = 2
+POTIM    = 0.4
+EDIFFG   = -0.02
+ISIF     = 0
+
+IDIPOL   = 3
+LDIPOL   = .TRUE.
 
