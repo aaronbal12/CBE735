@@ -10,6 +10,7 @@ INCARs come from files/INCAR_relax and files/INCAR_vib with ALGO = Normal.
 import os
 import re
 import shutil
+import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 N_SLAB = 27
@@ -22,6 +23,7 @@ VIB = {
     "OH_fcc": "ads/OH/fcc_hollow",
     "H2O_top": "ads/H2O/top",
     "CO_hcp": "ads/CO/hcp_hollow",
+    "H2_top": "ads/H2/top",             # molecular H2 (stretched) over top Rh
 }
 
 # Isolated molecules: PBE equilibrium bond lengths (A), centred in the box
@@ -84,6 +86,15 @@ def job_dir(rel, incar_text, kpoints):
     return d
 
 
+def make_vib(name, vib_slab, slab_kp):
+    src = VIB[name]
+    cell, els, cnt, xyz = read_poscar(os.path.join(ROOT, src, "CONTCAR"))
+    d = job_dir(f"vib/{name}", vib_slab, slab_kp)
+    free = [i >= N_SLAB for i in range(len(xyz))]
+    write_poscar(os.path.join(d, "POSCAR"), f"Rh(111) 3x3 + {name} vib (from {src})",
+                 cell, els, cnt, xyz, free)
+
+
 def main():
     slab_kp = open(os.path.join(ROOT, "files", "KPOINTS")).read()
     gamma_kp = "Gamma point only\n0\nGamma\n1 1 1\n0 0 0\n"
@@ -94,13 +105,15 @@ def main():
     relax_gas = incar("INCAR_relax", ISMEAR="0", **gas_mods)
     vib_gas = incar("INCAR_vib", **gas_mods)
 
+    # Only (re)build the named vib jobs, e.g. `make_vib_jobs.py H2_top`
+    if sys.argv[1:]:
+        for name in sys.argv[1:]:
+            make_vib(name, vib_slab, slab_kp)
+        return
+
     # 1) adsorbate frequencies from converged CONTCARs
-    for name, src in VIB.items():
-        cell, els, cnt, xyz = read_poscar(os.path.join(ROOT, src, "CONTCAR"))
-        d = job_dir(f"vib/{name}", vib_slab, slab_kp)
-        free = [i >= N_SLAB for i in range(len(xyz))]
-        write_poscar(os.path.join(d, "POSCAR"), f"Rh(111) 3x3 + {name} vib (from {src})",
-                     cell, els, cnt, xyz, free)
+    for name in VIB:
+        make_vib(name, vib_slab, slab_kp)
 
     # 2) H2 "adsorption": molecule flat over a top Rh, 2.0 A above it (H-Rh ~2.03 A)
     cell, els, cnt, xyz = read_poscar(os.path.join(ROOT, "clean", "Rh", "CONTCAR"))
