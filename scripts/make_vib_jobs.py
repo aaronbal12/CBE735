@@ -24,6 +24,7 @@ VIB = {
     "H2O_top": "ads/H2O/top",
     "CO_hcp": "ads/CO/hcp_hollow",
     "H2_top": "ads/H2/top",             # molecular H2 (stretched) over top Rh
+    "CO2_fcc": "ads/CO2/fcc_hollow",    # physisorbed CO2 ~3.8 A up (lowest of 4)
 }
 
 # H2 lying flat 2.0 A above the top Rh plane: site centre (x, y) and the
