@@ -1,9 +1,12 @@
-#!/.conda/envs/ase/bin/python
+#!/home/vempatti/.conda/envs/ase/bin/python
 
 import ase
 from ase import io
 from ase.io import read,write
-from ase.neb import NEB
+try:
+    from ase.mep import NEB   # ASE >= 3.23
+except ImportError:
+    from ase.neb import NEB
 from ase.constraints import FixScaled, FixAtoms
 import glob, os
 import shutil

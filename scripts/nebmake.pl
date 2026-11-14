@@ -24,7 +24,7 @@ if $nim > 100 ;
   =read_poscar($pos1) ;
   ($coo2,$basis2,$lattice2,$natoms2,$totatoms2,$selectiveflag,$selective)
   =read_poscar($pos2) ;
-  if($totatom1 != $totatom2) {
+  if($totatoms1 != $totatoms2) {
     print "TOTAL NUMBER OF ATOMS IN FILE 1 IS:  ",$totatoms1,"\n" ;
     print "TOTAL NUMBER OF ATOMS IN FILE 2 IS:  ",$totatoms2,"\n" ;
     die ;
@@ -49,7 +49,7 @@ if $nim > 100 ;
   }
   for($i=0 ; $i<3 ; $i++) {
     for($j=0 ; $j<3 ; $j++) {
-      if($basis1->[$j][$i] != $basis1->[$j][$i]) {
+      if(abs($basis1->[$j][$i] - $basis2->[$j][$i]) > 1e-6) {
         print "BASIS ELEMENT ",$i," ",$j," ... \n" ;
         print "... IS IN FILE 1:  ",$basis1->[$j][$i],"\n" ;
         print "... IS IN FILE 2:  ",$basis2->[$j][$i],"\n" ;
