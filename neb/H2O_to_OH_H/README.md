@@ -22,17 +22,15 @@ ls /home/vempatti/.conda/envs/ase/bin/python    # the Python it (and kie.py) run
 `nebef.pl` and `run_neb.sh` work as-is. `nebef.pl`'s column cuts were checked against these VASP 6.4 OUTCARs.
 `run_neb.sh` uses 112 cores = 16 per image, which NCORE = 4 divides evenly.
 
-## 1. Set up and submit the NEB (slides 26-31), after `ads/OH_H` converges
+## 1. Generate images and submit (slides 26-31)
+`neb/` already holds everything except POTCAR, which git ignores:
+`POSCAR_start` (IS CONTCAR), `POSCAR_end` (converged `ads/OH_H` CONTCAR, E0 = -196.3728 eV, max force 0.019),
+`OUTCAR_start`/`OUTCAR_end` (`nebinit.py` copies these into 00/ and 08/ for `nebef.pl`), `INCAR`, `KPOINTS` and `run_neb.sh`.
 ```bash
 cd neb/H2O_to_OH_H/neb
-cp ../IS/CONTCAR POSCAR_start
-cp ../../../ads/OH_H/CONTCAR POSCAR_end
-cp ../IS/OUTCAR OUTCAR_start           # nebinit.py copies these into 00/ and 08/ for nebef.pl
-cp ../../../ads/OH_H/OUTCAR OUTCAR_end
 cp ../../../ads/H2O/top/POTCAR .
 nebinit.py -n 7                        # makes 00-08
 ag 0*/POSCAR                           # check the path
-cp ../../../scripts/run_neb.sh .
 sbatch run_neb.sh
 ```
 Check that `00/OUTCAR` and `08/OUTCAR` exist after `nebinit.py`.
