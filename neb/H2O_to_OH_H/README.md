@@ -8,16 +8,16 @@ Follows VASP Tutorial 2, slides 25-36.
 | `neb/` | `INCAR` = `files/INCAR_neb` (7 images, climbing off, EDIFFG -0.2) + `KPOINTS` |
 
 **Final state:** OH* fcc + H* fcc co-adsorbed. It's relaxed as its own thermo job in `ads/OH_H`, so run that first.
-Its atom order matches IS (Rh x27, O, H that stays on O, H that leaves), which `nebmake.pl` needs.
+Its atom order matches IS (Rh x27, O, H that stays on O, H that leaves), which the interpolation needs.
 
-## 0. Script fixes (once, from the repo root)
-`scripts/` holds copies of the `~/bin` scripts. Two were fixed here; copy them back over the `~/bin` versions:
-* `nebmake.pl`: two input checks never fired because of typos (`$totatom1` instead of `$totatoms1`, and the cell compared with itself).
-* `nebinit.py`: its first line was `#!/.conda/...`, which doesn't exist. It now points to the same Python as `kie.py` and `order_poscar_elements.py`,
-  and it imports NEB from where newer ASE versions keep it.
+## 0. Scripts (once, from the repo root)
+`nebmake.pl` can't be used: it needs the VTST helper `Vasp.pm`, which isn't on Euclid.
+Use `nebinit.py` instead, the alternative from slide 27. It uses ASE and does IDPP interpolation, which also avoids the
+squeezed O-H bond (0.74 A) that plain linear interpolation gives here.
+`scripts/nebinit.py` has a fixed first line and import; copy it over the `~/bin` version:
 ```bash
-cp scripts/nebmake.pl scripts/nebinit.py ~/bin/
-ls ~/bin/Vasp.pm      # nebmake.pl needs this helper next to it; it wasn't in the push
+cp scripts/nebinit.py ~/bin/
+ls /home/vempatti/.conda/envs/ase/bin/python    # the Python it (and kie.py) runs with; must exist
 ```
 `nebef.pl` and `run_neb.sh` work as-is. `nebef.pl`'s column cuts were checked against these VASP 6.4 OUTCARs.
 `run_neb.sh` uses 112 cores = 16 per image, which NCORE = 4 divides evenly.
@@ -27,18 +27,15 @@ ls ~/bin/Vasp.pm      # nebmake.pl needs this helper next to it; it wasn't in th
 cd neb/H2O_to_OH_H/neb
 cp ../IS/CONTCAR POSCAR_start
 cp ../../../ads/OH_H/CONTCAR POSCAR_end
-sed -i '1s/.*/Rh O H/' POSCAR_start POSCAR_end   # nebmake copies line 1 into every image; ag can read the elements from it
+cp ../IS/OUTCAR OUTCAR_start           # nebinit.py copies these into 00/ and 08/ for nebef.pl
+cp ../../../ads/OH_H/OUTCAR OUTCAR_end
 cp ../../../ads/H2O/top/POTCAR .
-nebmake.pl POSCAR_start POSCAR_end 7
-cp ../IS/OUTCAR 00/                    # nebef.pl reads the endpoint energies from these
-cp ../../../ads/OH_H/OUTCAR 08/
+nebinit.py -n 7                        # makes 00-08
 ag 0*/POSCAR                           # check the path
 cp ../../../scripts/run_neb.sh .
 sbatch run_neb.sh
 ```
-* Linear interpolation squeezes the O-H bond that stays to about 0.74 A in images 03-05 (normal is 0.98 A).
-  No atoms overlap, so it should run. If it misbehaves, rebuild the images with `nebinit.py` instead of `nebmake.pl`.
-  It reads `POSCAR_start`/`POSCAR_end` in the same folder and does a smoother (IDPP) interpolation.
+Check that `00/OUTCAR` and `08/OUTCAR` exist after `nebinit.py`.
 
 ## 2. Restart / climbing image (slides 29, 31)
 Restart (the slide's version has curly quotes and also loops over 00/08):
