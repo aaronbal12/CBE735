@@ -1,0 +1,47 @@
+#!/bin/bash
+# suball: run "sbatch ~/bin/sub.sh" in every subfolder of the current folder,
+# skipping folders that are already running or have already run.
+# Usage: suball        submit
+#        suball -n     dry run (show what would be submitted)
+
+SUB="$HOME/bin/sub.sh"
+DRY=0
+[[ "$1" == "-n" ]] && DRY=1
+
+if [[ ! -f "$SUB" ]]; then
+    echo "Error: $SUB not found" >&2
+    exit 1
+fi
+
+# Working directories of jobs you already have queued or running
+active_dirs=$(squeue -u "$USER" -h -o "%Z" 2>/dev/null)
+
+submitted=0
+for d in */; do
+    d="${d%/}"
+    [[ -d "$d" ]] || continue
+    full=$(cd "$d" && pwd)
+
+    if echo "$active_dirs" | grep -qxF "$full"; then
+        echo "skip  $d  (already in queue)"
+        continue
+    fi
+    if compgen -G "$d/*.out" > /dev/null || [[ -f "$d/OUTCAR" ]]; then
+        echo "skip  $d  (has .out or OUTCAR)"
+        continue
+    fi
+    if [[ ! -f "$d/INCAR" || ! -f "$d/POSCAR" ]]; then
+        echo "skip  $d  (no INCAR/POSCAR)"
+        continue
+    fi
+
+    if (( DRY )); then
+        echo "would submit  $d"
+    else
+        echo -n "submit $d: "
+        (cd "$d" && sbatch "$SUB")
+    fi
+    ((submitted++))
+done
+
+echo "$submitted folder(s) $( ((DRY)) && echo 'would be ' )submitted."

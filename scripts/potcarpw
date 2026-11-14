@@ -1,0 +1,34 @@
+#!/bin/bash
+# makepotcar: build POTCAR in the current folder from the element order in POSCAR.
+# Usage: makepotcar [POSCAR_file]   (defaults to ./POSCAR)
+# Expects files named POTCAR_<Element> in $POTDIR.
+
+POTDIR="$HOME/work/CBE735/potcars"
+POSCAR="${1:-POSCAR}"
+
+if [[ ! -f "$POSCAR" ]]; then
+    echo "Error: $POSCAR not found in $(pwd)" >&2
+    exit 1
+fi
+
+# VASP5+ format: line 6 holds element symbols. Strip any "/hash" suffixes (e.g. Pt/abc123).
+elements=$(sed -n '6p' "$POSCAR" | tr -s ' \t' '\n' | sed 's|/.*||' | grep -v '^$')
+
+if [[ -z "$elements" ]] || echo "$elements" | grep -q '^[0-9]'; then
+    echo "Error: line 6 of $POSCAR has no element symbols (VASP4 format?). Add them above the atom counts." >&2
+    exit 1
+fi
+
+files=()
+for el in $elements; do
+    f="$POTDIR/POTCAR_$el"
+    if [[ ! -f "$f" ]]; then
+        echo "Error: $f not found" >&2
+        exit 1
+    fi
+    files+=("$f")
+done
+
+cat "${files[@]}" > POTCAR
+echo "POTCAR written with: $(echo $elements)"
+grep TITEL POTCAR
