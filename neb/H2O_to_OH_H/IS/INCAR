@@ -1,0 +1,19 @@
+General:
+  SYSTEM  = Pt 
+  PREC    = Accurate
+  ENCUT   = 400
+  ISMEAR  = 0; SIGMA=0.1 
+  IBRION  = 2
+  NSW     = 200
+  EDIFFG  = -0.02
+  LWAVE   = .FALSE.
+  LCHARG  = .FALSE.
+  ISYM    = 2 
+  NELMDL  = -5
+  VOSKOWN = 1
+  LREAL   = Auto
+  NPAR    = 2
+Dipole:
+  IDIPOL  = 3
+  LDIPOL  = .TRUE.
+
