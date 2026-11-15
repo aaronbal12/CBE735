@@ -30,7 +30,7 @@ ls /home/vempatti/.conda/envs/ase/bin/python    # the Python it (and kie.py) run
 cd neb/H2O_to_OH_H/neb
 cp ../../../ads/H2O/top/POTCAR .
 nebinit.py -n 7                        # makes 00-08
-ag 0*/POSCAR                           # check the path
+ase gui 0*/POSCAR                      # check the path (slide 28's "ag" is an alias for this)
 sbatch run_neb.sh
 ```
 Check that `00/OUTCAR` and `08/OUTCAR` exist after `nebinit.py`.
@@ -48,3 +48,25 @@ Once it reaches `reached required accuracy` at EDIFFG = -0.2, set `EDIFFG = -0.0
 nebef.pl
 ```
 Watch for a local minimum along the path (slide 36). Then run a vib job (`files/INCAR_vib`) on the highest image's CONTCAR. A true TS has exactly one imaginary mode.
+
+## 4. Climbing-image NEB: `cineb/`
+The first NEB (`neb/`, job 49988) stopped at NSW = 100 **without converging**: image forces were 0.1-1.5 eV/A, against the 0.2 target.
+Its last energies, relative to 00 (IS):
+
+| image | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 |
+|---|---|---|---|---|---|---|---|---|---|
+| E - E(00), eV | 0.00 | 0.02 | 0.26 | **1.03** | 0.70 | 0.29 | 0.34 | 0.32 | 0.22 |
+
+The O-H bond breaks around image 03 (O-H 1.67 A), so 03 is the climbing image.
+Afterwards the OH swings through a bridge site before reaching fcc, which makes the small dip at 05.
+If 05 stays a minimum in `cineb/`, it's a local minimum (slide 36): relax it and split the NEB.
+
+`cineb/` starts from `neb/`'s last CONTCARs (01-07). 00/ and 08/ have their OUTCARs.
+Its INCAR is `neb/`'s with `EDIFFG = -0.02` and `LCLIMB = .TRUE.`.
+```bash
+cd neb/H2O_to_OH_H/cineb
+cp ../../../ads/H2O/top/POTCAR .
+sbatch run_neb.sh
+```
+Restart after the 24 h limit, or after NSW runs out, with the same loop as section 2 (`for d in 0[1-7]; ...`) and `sbatch`.
+When `out` shows `reached required accuracy`, run `nebef.pl`. The highest image is the TS; verify it with a vib job (section 3).
