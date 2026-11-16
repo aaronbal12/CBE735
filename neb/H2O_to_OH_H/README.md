@@ -9,6 +9,7 @@ Follows VASP Tutorial 2, slides 25-36.
 | `cineb/` | climbing-image NEB over the full path (superseded) |
 | `cineb_bridge/` | climbing-image NEB, IS -> OH* bridge + H* (the step with the TS) |
 | `neb_IS_to_bridge/` | same step as `cineb_bridge/`, done the slides' way: fresh 7-image `nebinit.py` band, regular NEB then CI |
+| `neb_bridge_to_fcc/` | second half of the split: OH* bridge + H* -> OH* fcc + H* (3 images, 3 nodes) |
 
 **Final state:** OH* fcc + H* fcc co-adsorbed. It's relaxed as its own thermo job in `ads/OH_H`, so run that first.
 Its atom order matches IS (Rh x27, O, H that stays on O, H that leaves), which the interpolation needs.
@@ -137,3 +138,22 @@ sbatch run_neb.sh
 ```
 Then follow section 2: restart with `for d in 0[1-7]; do cp $d/CONTCAR $d/POSCAR; done` until `reached required accuracy`.
 Then set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` and restart for the climbing image.
+
+## 7. Second half of the split: `neb_bridge_to_fcc/` (OH* bridge + H* -> OH* fcc + H*)
+The OH hops from the bridge into its fcc site, and H* stays put. The path is short (O moves about 0.9 A), so it uses 3 images.
+- `POSCAR_start`/`OUTCAR_start`: relaxed `ads/OH_bridge_H` (E0 = -196.3475 eV).
+- `POSCAR_end`/`OUTCAR_end`: relaxed `ads/OH_H` (E0 = -196.3728 eV), the FS of the original NEB.
+- `INCAR`: `files/INCAR_neb` with `IMAGES = 3` (climbing off, EDIFFG -0.2).
+- `run_neb.sh`: 3 nodes x 16 = 48 cores, 16 per image.
+
+The OH tips over during the hop, so plain linear interpolation squeezes O-H to 0.86 A. `nebinit.py` uses IDPP by default, which avoids that. Check it in `ase gui`.
+```bash
+cd neb/H2O_to_OH_H/neb_bridge_to_fcc
+cp ../../../ads/H2O/top/POTCAR .
+nebinit.py -n 3                        # makes 00-04, copies OUTCARs into 00/ and 04/
+ase gui 0*/POSCAR                      # O-H should stay near 0.98 A in every image
+sbatch run_neb.sh
+```
+Restart with `for d in 0[1-3]; do cp $d/CONTCAR $d/POSCAR; done`.
+After `reached required accuracy`, set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` and restart for the climbing image.
+The barrier is expected to be only a few hundredths of an eV, so it doesn't control the rate. It completes the energy diagram from H2O* to OH* fcc + H*.
