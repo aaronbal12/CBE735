@@ -64,6 +64,19 @@ By image 04, H2 is already in its final fcc site. Images 05-07 are only the OH s
 Image 07's leftover force is in that flat tail, not at the TS, so the run moved on to CI-NEB rather than restarting again.
 The earlier dip at 05 is gone: 05-07 are flat, not a local minimum.
 
+Why 07 won't converge: the band bends sharply at 06-07 (angle about 81 degrees, against 110-140 degrees elsewhere).
+The OH overshoots the bridge site at 06 and doubles back toward fcc at 07, and the OH tilt flips between them.
+07's force is mostly spring force (0.73 eV/A along the path, from uneven spacing: 0.75 A to 06, 0.60 A to 08). At the corner, the optimizer oscillates instead of settling.
+
+**Check first: `ads/OH_bridge_H`.** It relaxes image 05 (OH* bridge + H* fcc) as an ordinary ads job (`INCAR`/`KPOINTS`/`run.sh` from `ads/OH_H`).
+```bash
+cd ads/OH_bridge_H
+cp ../H2O/top/POTCAR .
+sbatch run.sh
+```
+- If OH stays on the bridge, it's a local minimum (slide 36). Split the NEB: run CI-NEB from IS to this state (that part has the TS), and treat the bridge-to-fcc hop separately.
+- If OH rolls into fcc, there's no intermediate. Run `cineb/` as below, but with `EDIFFG = -0.05`, because 07 won't reach 0.02.
+
 `cineb/` starts from `neb/`'s CONTCARs after the restart (01-07). 00/ and 08/ have their OUTCARs.
 Its INCAR is `neb/`'s with `EDIFFG = -0.02` and `LCLIMB = .TRUE.`.
 ```bash
