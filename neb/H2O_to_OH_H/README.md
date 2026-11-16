@@ -6,6 +6,8 @@ Follows VASP Tutorial 2, slides 25-36.
 |------|------------|
 | `IS/`  | H2O* on top: copy of `ads/H2O/top`. Lowest energy (E0 = -196.598 eV) and the only H2O site that converged |
 | `neb/` | `INCAR` = `files/INCAR_neb` (7 images, climbing off, EDIFFG -0.2) + `KPOINTS` |
+| `cineb/` | climbing-image NEB over the full path (superseded) |
+| `cineb_bridge/` | climbing-image NEB, IS -> OH* bridge + H* (the step with the TS) |
 
 **Final state:** OH* fcc + H* fcc co-adsorbed. It's relaxed as its own thermo job in `ads/OH_H`, so run that first.
 Its atom order matches IS (Rh x27, O, H that stays on O, H that leaves), which the interpolation needs.
@@ -86,3 +88,35 @@ sbatch run_neb.sh
 ```
 Restart after the 24 h limit, or after NSW runs out, with the same loop as section 2 (`for d in 0[1-7]; ...`) and `sbatch`.
 When `out` shows `reached required accuracy`, run `nebef.pl`. The highest image is the TS; verify it with a vib job (section 3).
+
+**Result (job 50062, 100 steps, not converged):** climbing image 03 at 0.83 eV, max force 0.36. Image 07 is still the worst, at 0.73 eV/A.
+`cineb/` is superseded by `cineb_bridge/` (section 5).
+
+## 5. Split NEB: `cineb_bridge/` (IS -> OH* bridge + H*)
+`ads/OH_bridge_H` (job 50064) converged in 56 steps (max force 0.019 eV/A) with **OH still on the bridge**.
+Its O moved to fractional (0.322, 0.512), the bridge between top Rh atoms at (1/3, 1/3) and (1/3, 2/3).
+So OH* bridge + H* fcc is a local minimum (slide 36). The full path is two steps:
+
+| state | E0, eV | E - E(IS), eV |
+|---|---|---|
+| IS: H2O* top | -196.5977 | 0.00 |
+| TS (CI image 03, not converged yet) | -195.7699 | ~0.83 |
+| OH* bridge + H* fcc (`ads/OH_bridge_H`) | -196.3475 | 0.25 |
+| FS: OH* fcc + H* fcc (`ads/OH_H`) | -196.3728 | 0.22 |
+
+The O-H scission (IS -> bridge) holds the TS. The bridge -> fcc OH hop is the flat tail (images 05-07 at about 0.28 eV), so its barrier is only a few hundredths of an eV.
+That tail caused 07's kinked, oscillating band.
+
+`cineb_bridge/` runs only the scission step:
+- `00/`: IS (POSCAR + OUTCAR).
+- `01-04/`: `cineb/`'s last CONTCARs 01-04, nearly converged. The climbing image is 03.
+- `05/`: `ads/OH_bridge_H` CONTCAR + OUTCAR.
+- `INCAR`: `cineb/`'s with `IMAGES = 4` (still `LCLIMB = .TRUE.`, `EDIFFG = -0.02`).
+- `run_neb.sh`: 4 nodes x 16 = 64 cores, 16 per image.
+```bash
+cd neb/H2O_to_OH_H/cineb_bridge
+cp ../../../ads/H2O/top/POTCAR .
+sbatch run_neb.sh
+```
+Restart with `for d in 0[1-4]; do cp $d/CONTCAR $d/POSCAR; done` and `sbatch`.
+When it converges, the highest image is the TS. Verify it with a vib job (exactly one imaginary mode).
