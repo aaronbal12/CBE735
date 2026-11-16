@@ -8,6 +8,7 @@ Follows VASP Tutorial 2, slides 25-36.
 | `neb/` | `INCAR` = `files/INCAR_neb` (7 images, climbing off, EDIFFG -0.2) + `KPOINTS` |
 | `cineb/` | climbing-image NEB over the full path (superseded) |
 | `cineb_bridge/` | climbing-image NEB, IS -> OH* bridge + H* (the step with the TS) |
+| `neb_IS_to_bridge/` | same step as `cineb_bridge/`, done the slides' way: fresh 7-image `nebinit.py` band, regular NEB then CI |
 
 **Final state:** OH* fcc + H* fcc co-adsorbed. It's relaxed as its own thermo job in `ads/OH_H`, so run that first.
 Its atom order matches IS (Rh x27, O, H that stays on O, H that leaves), which the interpolation needs.
@@ -120,3 +121,19 @@ sbatch run_neb.sh
 ```
 Restart with `for d in 0[1-4]; do cp $d/CONTCAR $d/POSCAR; done` and `sbatch`.
 When it converges, the highest image is the TS. Verify it with a vib job (exactly one imaginary mode).
+
+## 6. Fresh 7-image NEB: `neb_IS_to_bridge/` (slide 36, done by the book)
+This is the same step as `cineb_bridge/`, but with a new band built the tutorial's way instead of reusing images. Use whichever finishes cleanly; both should give the same TS.
+- `POSCAR_start`/`OUTCAR_start`: IS (same as `neb/`).
+- `POSCAR_end`/`OUTCAR_end`: relaxed `ads/OH_bridge_H` (E0 = -196.3475 eV).
+- `INCAR`: `files/INCAR_neb`, the same as `neb/` (7 images, climbing off, EDIFFG -0.2).
+- `KPOINTS` and `run_neb.sh` (112 cores) are the same as `neb/`.
+```bash
+cd neb/H2O_to_OH_H/neb_IS_to_bridge
+cp ../../../ads/H2O/top/POTCAR .
+nebinit.py -n 7                        # makes 00-08, copies OUTCARs into 00/ and 08/
+ase gui 0*/POSCAR                      # check the path
+sbatch run_neb.sh
+```
+Then follow section 2: restart with `for d in 0[1-7]; do cp $d/CONTCAR $d/POSCAR; done` until `reached required accuracy`.
+Then set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` and restart for the climbing image.
