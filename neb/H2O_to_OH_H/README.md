@@ -50,18 +50,21 @@ nebef.pl
 Watch for a local minimum along the path (slide 36). Then run a vib job (`files/INCAR_vib`) on the highest image's CONTCAR. A true TS has exactly one imaginary mode.
 
 ## 4. Climbing-image NEB: `cineb/`
-The first NEB (`neb/`, job 49988) stopped at NSW = 100 **without converging**: image forces were 0.1-1.5 eV/A, against the 0.2 target.
-Its last energies, relative to 00 (IS):
+`neb/` ran twice (jobs 49988 and 50028, 100 steps each). After the restart, images 01-06 are below the 0.2 eV/A target.
+Image 07 isn't: it oscillates between 0.3 and 0.7 eV/A (0.69 at the end).
 
 | image | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 |
 |---|---|---|---|---|---|---|---|---|---|
-| E - E(00), eV | 0.00 | 0.02 | 0.26 | **1.03** | 0.70 | 0.29 | 0.34 | 0.32 | 0.22 |
+| E - E(00), eV | 0.00 | 0.03 | 0.71 | **0.85** | 0.61 | 0.29 | 0.29 | 0.29 | 0.22 |
+| O-H2, A | 0.98 | 0.99 | 1.24 | 2.15 | 2.51 | 2.86 | 3.13 | 2.93 | 2.91 |
+| max force, eV/A | - | 0.06 | 0.09 | 0.14 | 0.10 | 0.02 | 0.16 | 0.69 | - |
 
-The O-H bond breaks around image 03 (O-H 1.67 A), so 03 is the climbing image.
-Afterwards the OH swings through a bridge site before reaching fcc, which makes the small dip at 05.
-If 05 stays a minimum in `cineb/`, it's a local minimum (slide 36): relax it and split the NEB.
+The O-H bond breaks between 02 and 03, so 03 is the climbing image. The barrier is about 0.85 eV before CI.
+By image 04, H2 is already in its final fcc site. Images 05-07 are only the OH sliding across a flat stretch (all at 0.29 eV) into its fcc site.
+Image 07's leftover force is in that flat tail, not at the TS, so the run moved on to CI-NEB rather than restarting again.
+The earlier dip at 05 is gone: 05-07 are flat, not a local minimum.
 
-`cineb/` starts from `neb/`'s last CONTCARs (01-07). 00/ and 08/ have their OUTCARs.
+`cineb/` starts from `neb/`'s CONTCARs after the restart (01-07). 00/ and 08/ have their OUTCARs.
 Its INCAR is `neb/`'s with `EDIFFG = -0.02` and `LCLIMB = .TRUE.`.
 ```bash
 cd neb/H2O_to_OH_H/cineb
