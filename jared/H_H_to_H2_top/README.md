@@ -13,8 +13,12 @@ Corrected setup for `../H_H_NEB_Calculation_Climb`, which didn't converge. That 
 4. The IS had one H fixed (`F F F`), so the IS wasn't fully relaxed. `LCHARG = .FAST.` isn't valid; VASP reads it as `.FALSE.`.
 
 ## What changed
-Image 04 of the old band was H2* on top: E = -189.1786 eV, H-H 0.92 A, 1.6 A up.
-That matches the converged `ads/H2/top` (-189.1795 eV), so H2* top is a **local minimum on the path** (Tutorial 2, slide 36).
+Image 04 of the old band was H2* on top: E = -189.1786 eV, H-H 0.92 A, 1.6 A up. That matches the converged `ads/H2/top` (-189.1795 eV).
+
+**Caveat: H2* top is at best a very shallow minimum.** It only holds in the symmetric geometry (H2 centred on the Rh atom, both H at the same height).
+Started off-symmetry, H2 tends to split or desorb. `vib/H2_top` shows no imaginary mode, but the softest mode is 65 cm-1 (8 meV).
+In the old band, image 04 sat on the rising slope (03 -> 04 -> 05 all uphill), not in a dip.
+So treat it as a convenient end point, not a real intermediate. Expect the NEB below to rise steadily with at most a tiny maximum near the end.
 The step splits in two:
 
 | step | from -> to | how |
@@ -66,4 +70,7 @@ sbatch run_neb.sh
 Check with `nebef.pl`. Column 2 is max force, which must be below the EDIFFG value for images 01-05. Column 4 is energy relative to 00.
 Verify the highest image with a vib job: exactly one imaginary mode.
 
-**If the energy only rises from 2H* to H2* with no maximum,** step A has no barrier beyond its own reaction energy too, and the barrier is just E(H2* top) - E(IS).
+**If the energy only rises from 2H* to H2* with no maximum** (likely, given the caveat above), H2 formation has no barrier beyond its reaction energy.
+The barrier for the whole H* + H* -> H2(g) step is then just its reaction energy: E(H2 gas) + E(clean) - E(IS relaxed).
+That's about +0.8 eV, judging by the old band (01-03 at about -189.62, plateau at -188.81).
+If that's acceptable for the project, ask the instructor; the IS relaxation alone then gives the number, and the NEB is just a check.
