@@ -102,7 +102,7 @@ So OH* bridge + H* fcc is a local minimum (slide 36). The full path is two steps
 | state | E0, eV | E - E(IS), eV |
 |---|---|---|
 | IS: H2O* top | -196.5977 | 0.00 |
-| TS (CI image 03, not converged yet) | -195.7699 | ~0.83 |
+| TS (`neb_IS_to_bridge` image 04, before CI) | -195.6418 | ~0.96 |
 | OH* bridge + H* fcc (`ads/OH_bridge_H`) | -196.3475 | 0.25 |
 | FS: OH* fcc + H* fcc (`ads/OH_H`) | -196.3728 | 0.22 |
 
@@ -123,6 +123,9 @@ sbatch run_neb.sh
 Restart with `for d in 0[1-4]; do cp $d/CONTCAR $d/POSCAR; done` and `sbatch`.
 When it converges, the highest image is the TS. Verify it with a vib job (exactly one imaginary mode).
 
+**Result (job 50076, 100 steps, failed):** the band came apart. Energies above IS: 01 0.11, 02 1.00, 03 0.53, 04 0.74 eV, so the energy is no longer monotonic on either side of the peak.
+Image 03 hit 3.3 eV/A at step ~80 and ended at 1.12. The reused cineb images were spaced unevenly once the endpoint changed. Abandoned in favor of `neb_IS_to_bridge/`.
+
 ## 6. Fresh 7-image NEB: `neb_IS_to_bridge/` (slide 36, done by the book)
 This is the same step as `cineb_bridge/`, but with a new band built the tutorial's way instead of reusing images. Use whichever finishes cleanly; both should give the same TS.
 - `POSCAR_start`/`OUTCAR_start`: IS (same as `neb/`).
@@ -138,6 +141,17 @@ sbatch run_neb.sh
 ```
 Then follow section 2: restart with `for d in 0[1-7]; do cp $d/CONTCAR $d/POSCAR; done` until `reached required accuracy`.
 Then set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` and restart for the climbing image.
+
+**Result (job 50077, regular NEB, converged at EDIFFG -0.2):** a clean band with one peak.
+
+| image | 00 | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 |
+|---|---|---|---|---|---|---|---|---|---|
+| E - E(IS), eV | 0.00 | 0.02 | 0.14 | 0.74 | **0.96** | 0.79 | 0.58 | 0.33 | 0.25 |
+| O-H (breaking), A | 0.98 | 0.99 | 1.01 | 1.24 | 1.82 | 2.19 | 2.50 | 2.78 | 2.99 |
+| max force, eV/A | - | 0.09 | 0.16 | 0.20 | 0.20 | 0.11 | 0.10 | 0.07 | - |
+
+Spacing is even (0.43-0.47 A), and the angles are 125-157 degrees, so there are no kinks. Image 04 will be the climbing image.
+The old full-path estimate (0.83 eV) was low because its climbing image hadn't converged. 0.96 eV agrees with `cineb_bridge`'s highest image (1.00 eV).
 
 ## 7. Second half of the split: `neb_bridge_to_fcc/` (OH* bridge + H* -> OH* fcc + H*)
 The OH hops from the bridge into its fcc site, and H* stays put. The path is short (O moves about 0.9 A), so it uses 3 images.
@@ -157,3 +171,6 @@ sbatch run_neb.sh
 Restart with `for d in 0[1-3]; do cp $d/CONTCAR $d/POSCAR; done`.
 After `reached required accuracy`, set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` and restart for the climbing image.
 The barrier is expected to be only a few hundredths of an eV, so it doesn't control the rate. It completes the energy diagram from H2O* to OH* fcc + H*.
+
+**Results:** the regular NEB (job 50078) converged in 2 steps. CI (job 50079) ran 100 steps without reaching 0.02. The final max forces are 01 0.032, 02 0.061 and 03 0.055 eV/A, still falling slowly.
+Energies above the bridge state: 01 0.03, 02 (climbing) **0.09**, 03 0.03 eV; FS -0.03 eV. One more restart should finish it.
