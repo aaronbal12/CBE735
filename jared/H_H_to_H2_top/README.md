@@ -21,8 +21,8 @@ Corrected setup for `../H_H_NEB_Calculation_Climb`, which didn't converge. That 
   - It's a very shallow minimum held mostly by symmetry. Off-symmetry, H2 splits or desorbs. `vib/H2_top` shows no imaginary mode, but its softest mode is 65 cm-1.
   - It's still a valid NEB endpoint, because VASP never moves endpoints.
   - It keeps the band on the surface, which the gas-phase FS didn't.
-- **5 images:** the path is only about 1.85 A, so this gives about 0.3 A spacing. `INCAR` = `files/INCAR_neb` with `IMAGES = 5` (climbing off, EDIFFG -0.2).
-- **run_neb.sh:** 5 nodes x 16 = 80 cores.
+- **7 images** (the course default): the path is about 1.85 A, so the spacing is about 0.23 A. `INCAR` = `files/INCAR_neb` (`IMAGES = 7`, climbing off, EDIFFG -0.2).
+- **run_neb.sh:** 7 nodes x 16 = 112 cores.
 
 ## Run
 `OUTCAR_start` isn't in the repo. Copy it from wherever the IS relaxation ran.
@@ -30,23 +30,23 @@ Corrected setup for `../H_H_NEB_Calculation_Climb`, which didn't converge. That 
 cd jared/H_H_to_H2_top/neb
 cp <IS relaxation folder>/OUTCAR OUTCAR_start
 cp ../../../ads/H2/top/POTCAR .        # Rh H order
-nebinit.py -n 5                        # makes 00-06, copies OUTCARs into 00/ and 06/
-ls -d 0*                               # must be exactly 00-06; IMAGES = 5 needs 5 middle folders
+nebinit.py -n 7                        # makes 00-08, copies OUTCARs into 00/ and 08/
+ls -d 0*                               # must be exactly 00-08; IMAGES = 7 needs 7 middle folders
 ase gui 0*/POSCAR                      # both H should move from the fcc sites toward the top Rh
 sbatch run_neb.sh
 ```
 Restart until `out` says `reached required accuracy`:
 ```bash
-for d in 0[1-5]; do cp $d/CONTCAR $d/POSCAR; done
+for d in 0[1-7]; do cp $d/CONTCAR $d/POSCAR; done
 sbatch run_neb.sh
 ```
 Then switch on the climbing image in the same folder and restart:
 ```bash
 sed -i 's/^EDIFFG.*/EDIFFG   = -0.02/; s/^LCLIMB.*/LCLIMB   = .TRUE./' INCAR
-for d in 0[1-5]; do cp $d/CONTCAR $d/POSCAR; done
+for d in 0[1-7]; do cp $d/CONTCAR $d/POSCAR; done
 sbatch run_neb.sh
 ```
-Check with `nebef.pl`: column 2 (max force) must be below the EDIFFG value for images 01-05, and column 4 is energy relative to 00.
+Check with `nebef.pl`: column 2 (max force) must be below the EDIFFG value for images 01-07, and column 4 is energy relative to 00.
 
 ## What to expect
 - **Most likely:** a steady rise from 2H* to H2* top (about +0.44 eV, from the old band), with no peak or only a tiny one near the end.

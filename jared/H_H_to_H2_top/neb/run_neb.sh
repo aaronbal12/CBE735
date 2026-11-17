@@ -3,9 +3,9 @@
 #SBATCH --job-name=neb_cbe735
 #SBATCH -q standard         #standard, debug, long, high_priority
 #SBATCH -t 24:00:00         #job length
-#SBATCH -N 5
+#SBATCH -N 7
 #SBATCH --ntasks-per-node=16
-#SBATCH -n 80
+#SBATCH -n 112
 #SBATCH --output=job.%J.out
 #SBATCH --error=job.%J.err
 

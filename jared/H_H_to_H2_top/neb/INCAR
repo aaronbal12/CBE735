@@ -29,5 +29,5 @@ IDIPOL   = 3
 LDIPOL   = .TRUE.
 
 ICHAIN   = 0
-IMAGES   = 5  # 2H* fcc -> H2* top; short path (~1.85 A)
+IMAGES   = 7
 LCLIMB   = .FALSE. #change to .TRUE. once non-climbing convergence reached
