@@ -22,7 +22,7 @@ ISPIN    = 1 # 1: non-spin polarized
 NSW      = 100 # number of steps
 IBRION   = 3
 POTIM    = 0.01
-EDIFFG   = -0.2  #change to -0.02 once non-climbing neb converges
+EDIFFG   = -0.02
 ISIF     = 0
 
 IDIPOL   = 3
@@ -30,4 +30,4 @@ LDIPOL   = .TRUE.
 
 ICHAIN   = 0
 IMAGES   = 3  # OH bridge -> fcc hop; short path
-LCLIMB   = .FALSE. #change to .TRUE. once non-climbing convergence reached
+LCLIMB   = .TRUE.
