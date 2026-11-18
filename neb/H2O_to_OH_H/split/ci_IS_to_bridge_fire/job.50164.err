@@ -1,0 +1,78 @@
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: No such file or directory
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/01/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007F9FE502A610  Unknown               Unknown  Unknown
+libc.so.6          00007F9FE502A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/03/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007FD986A2A610  Unknown               Unknown  Unknown
+libc.so.6          00007FD986A2A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/02/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007F1EA9C2A610  Unknown               Unknown  Unknown
+libc.so.6          00007F1EA9C2A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/05/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007F26D402A610  Unknown               Unknown  Unknown
+libc.so.6          00007F26D402A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/04/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007FBDBA82A610  Unknown               Unknown  Unknown
+libc.so.6          00007FBDBA82A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/07/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007FE235E2A610  Unknown               Unknown  Unknown
+libc.so.6          00007FE235E2A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+forrtl: severe (29): file not found, unit 61, file /home/apbal/work/proj/neb/H2O_to_OH_H/ci_IS_to_bridge_fire/06/XDATCAR
+Image              PC                Routine            Line        Source             
+vasp_std           0000000001CB09C2  Unknown               Unknown  Unknown
+vasp_std           0000000001C864B1  Unknown               Unknown  Unknown
+vasp_std           0000000001C83C0B  Unknown               Unknown  Unknown
+vasp_std           0000000001C5FFC9  Unknown               Unknown  Unknown
+vasp_std           000000000040B67D  Unknown               Unknown  Unknown
+libc.so.6          00007F5F55A2A610  Unknown               Unknown  Unknown
+libc.so.6          00007F5F55A2A6C0  __libc_start_main     Unknown  Unknown
+vasp_std           000000000040B595  Unknown               Unknown  Unknown
+pwd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
