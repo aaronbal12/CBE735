@@ -153,6 +153,9 @@ Then set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` and restart for the climbing ima
 Spacing is even (0.43-0.47 A), and the angles are 125-157 degrees, so there are no kinks. Image 04 will be the climbing image.
 The old full-path estimate (0.83 eV) was low because its climbing image hadn't converged. 0.96 eV agrees with `cineb_bridge`'s highest image (1.00 eV).
 
+**CI run 1 (job 50112, 100 steps, not converged):** climbing image 04 ended at 0.90 eV with max force 0.27 eV/A, rising. Its O-H went from 1.82 to 1.94 A, and the band angle at 04 is 100 degrees.
+It was restarted with the slides' settings (same INCAR, CONTCAR -> POSCAR).
+
 ## 7. Second half of the split: `neb_bridge_to_fcc/` (OH* bridge + H* -> OH* fcc + H*)
 The OH hops from the bridge into its fcc site, and H* stays put. The path is short (O moves about 0.9 A), so it uses 3 images.
 - `POSCAR_start`/`OUTCAR_start`: relaxed `ads/OH_bridge_H` (E0 = -196.3475 eV).
@@ -173,4 +176,5 @@ After `reached required accuracy`, set `EDIFFG = -0.02` and `LCLIMB = .TRUE.` an
 The barrier is expected to be only a few hundredths of an eV, so it doesn't control the rate. It completes the energy diagram from H2O* to OH* fcc + H*.
 
 **Results:** the regular NEB (job 50078) converged in 2 steps. CI (job 50079) ran 100 steps without reaching 0.02. The final max forces are 01 0.032, 02 0.061 and 03 0.055 eV/A, still falling slowly.
-Energies above the bridge state: 01 0.03, 02 (climbing) **0.09**, 03 0.03 eV; FS -0.03 eV. One more restart should finish it.
+Energies above the bridge state: 01 0.03, 02 (climbing) **0.09**, 03 0.03 eV; FS -0.03 eV.
+After two more restarts (jobs 50114, 50135), CI converged: 02 = **0.088 eV**, all forces < 0.02. TS vib job: `vib/TS_OH_bridge_fcc`.
