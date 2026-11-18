@@ -1,0 +1,1756 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<modeling>
+ <generator>
+  <i name="program" type="string">vasp </i>
+  <i name="version" type="string">6.4.2  </i>
+  <i name="subversion" type="string">20Jul23 (build Jun 06 2025 21:58:51) complex                          parallel </i>
+  <i name="platform" type="string">LinuxIFC </i>
+  <i name="date" type="string">2026 11 18 </i>
+  <i name="time" type="string">11:19:44 </i>
+ </generator>
+ <incar>
+  <i type="string" name="SYSTEM">transition_metal</i>
+  <i type="string" name="PREC">Accurate</i>
+  <i type="string" name="ALGO">Fast</i>
+  <i type="int" name="ISPIN">     1</i>
+  <i type="int" name="NELM">    60</i>
+  <i type="int" name="NELMDL">   -12</i>
+  <i type="int" name="NELMIN">     4</i>
+  <i type="int" name="IBRION">     3</i>
+  <i name="EDIFF">      0.00000100</i>
+  <i name="EDIFFG">     -0.02000000</i>
+  <i type="int" name="NSW">   100</i>
+  <i type="int" name="ISIF">     0</i>
+  <i type="int" name="ISYM">     0</i>
+  <i name="ENCUT">    400.00000000</i>
+  <i name="POTIM">      0.01000000</i>
+  <i type="string" name="LREAL">Auto</i>
+  <i type="int" name="ISMEAR">     0</i>
+  <i name="SIGMA">      0.10000000</i>
+  <i type="logical" name="LCHARG"> F  </i>
+  <i type="logical" name="LDIPOL"> T  </i>
+  <i type="int" name="IDIPOL">     3</i>
+ </incar>
+ <primitive_cell>
+  <structure name="primitive_cell" >
+   <crystal>
+    <varray name="basis" >
+     <v>       8.06101731       0.00000000       0.00000000 </v>
+     <v>       4.03050865       6.98104577       0.00000000 </v>
+     <v>       0.00000000       0.00000000      20.38786205 </v>
+    </varray>
+    <i name="volume">   1147.31329181 </i>
+    <varray name="rec_basis" >
+     <v>       0.12405382      -0.07162251       0.00000000 </v>
+     <v>       0.00000000       0.14324501       0.00000000 </v>
+     <v>       0.00000000       0.00000000       0.04904879 </v>
+    </varray>
+   </crystal>
+   <varray name="positions" >
+    <v>       0.11111111       0.11111111       0.00000000 </v>
+    <v>       0.44444444       0.11111111       0.00000000 </v>
+    <v>       0.77777778       0.11111111       0.00000000 </v>
+    <v>       0.11111111       0.44444444       0.00000000 </v>
+    <v>       0.44444444       0.44444444       0.00000000 </v>
+    <v>       0.77777778       0.44444444       0.00000000 </v>
+    <v>       0.11111111       0.77777778       0.00000000 </v>
+    <v>       0.44444444       0.77777778       0.00000000 </v>
+    <v>       0.77777778       0.77777778       0.00000000 </v>
+    <v>       0.88888889       0.22222222       0.10760967 </v>
+    <v>       0.22222222       0.22222222       0.10760967 </v>
+    <v>       0.55555556       0.22222222       0.10760967 </v>
+    <v>       0.88888889       0.55555556       0.10760967 </v>
+    <v>       0.22222222       0.55555556       0.10760967 </v>
+    <v>       0.55555556       0.55555556       0.10760967 </v>
+    <v>       0.88888889       0.88888889       0.10760967 </v>
+    <v>       0.22222222       0.88888889       0.10760967 </v>
+    <v>       0.55555556       0.88888889       0.10760967 </v>
+    <v>       0.00000000       0.00000000       0.21521933 </v>
+    <v>       0.33333333       0.00000000       0.21521933 </v>
+    <v>       0.66666667       0.00000000       0.21521933 </v>
+    <v>       0.00000000       0.33333333       0.21521933 </v>
+    <v>       0.33333333       0.33333333       0.21521933 </v>
+    <v>       0.66666667       0.33333333       0.21521933 </v>
+    <v>       0.00000000       0.66666667       0.21521933 </v>
+    <v>       0.33333333       0.66666667       0.21521933 </v>
+    <v>       0.66666667       0.66666667       0.21521933 </v>
+    <v>       0.30094930       0.48590511       0.30031816 </v>
+    <v>       0.41078590       0.41333798       0.32945225 </v>
+    <v>       0.45778287       0.10033228       0.26532617 </v>
+   </varray>
+  </structure>
+  <varray name="primitive_index" >
+   <v type="int" >        1 </v>
+   <v type="int" >        2 </v>
+   <v type="int" >        3 </v>
+   <v type="int" >        4 </v>
+   <v type="int" >        5 </v>
+   <v type="int" >        6 </v>
+   <v type="int" >        7 </v>
+   <v type="int" >        8 </v>
+   <v type="int" >        9 </v>
+   <v type="int" >       10 </v>
+   <v type="int" >       11 </v>
+   <v type="int" >       12 </v>
+   <v type="int" >       13 </v>
+   <v type="int" >       14 </v>
+   <v type="int" >       15 </v>
+   <v type="int" >       16 </v>
+   <v type="int" >       17 </v>
+   <v type="int" >       18 </v>
+   <v type="int" >       19 </v>
+   <v type="int" >       20 </v>
+   <v type="int" >       21 </v>
+   <v type="int" >       22 </v>
+   <v type="int" >       23 </v>
+   <v type="int" >       24 </v>
+   <v type="int" >       25 </v>
+   <v type="int" >       26 </v>
+   <v type="int" >       27 </v>
+   <v type="int" >       28 </v>
+   <v type="int" >       29 </v>
+   <v type="int" >       30 </v>
+  </varray>
+ </primitive_cell>
+ <kpoints>
+  <generation param="Monkhorst-Pack">
+   <v type="int" name="divisions">       4        4        1 </v>
+   <v name="usershift">      0.00000000       0.00000000       0.00000000 </v>
+   <v name="genvec1">      0.25000000       0.00000000       0.00000000 </v>
+   <v name="genvec2">      0.00000000       0.25000000       0.00000000 </v>
+   <v name="genvec3">      0.00000000       0.00000000       1.00000000 </v>
+   <v name="shift">      0.50000000       0.50000000       0.00000000 </v>
+  </generation>
+  <varray name="kpointlist" >
+   <v>       0.12500000       0.12500000       0.00000000 </v>
+   <v>       0.00000000       0.12500000       0.00000000 </v>
+   <v>      -0.12500000       0.00000000       0.00000000 </v>
+   <v>       0.37500000       0.12500000       0.00000000 </v>
+   <v>       0.25000000       0.37500000       0.00000000 </v>
+   <v>      -0.12500000       0.25000000       0.00000000 </v>
+   <v>       0.25000000      -0.12500000       0.00000000 </v>
+   <v>      -0.12500000      -0.37500000       0.00000000 </v>
+   <v>      -0.37500000      -0.25000000       0.00000000 </v>
+   <v>      -0.37500000       0.12500000       0.00000000 </v>
+   <v>       0.50000000      -0.37500000       0.00000000 </v>
+   <v>      -0.12500000       0.50000000       0.00000000 </v>
+   <v>       0.50000000      -0.12500000       0.00000000 </v>
+   <v>      -0.12500000       0.37500000       0.00000000 </v>
+   <v>       0.37500000       0.50000000       0.00000000 </v>
+   <v>      -0.12500000       0.12500000       0.00000000 </v>
+   <v>      -0.25000000      -0.12500000       0.00000000 </v>
+   <v>      -0.12500000      -0.25000000       0.00000000 </v>
+   <v>       0.37500000       0.37500000       0.00000000 </v>
+   <v>       0.00000000       0.37500000       0.00000000 </v>
+   <v>      -0.37500000       0.00000000       0.00000000 </v>
+   <v>      -0.37500000       0.37500000       0.00000000 </v>
+   <v>       0.25000000      -0.37500000       0.00000000 </v>
+   <v>      -0.37500000       0.25000000       0.00000000 </v>
+  </varray>
+  <varray name="weights" >
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+   <v>       0.04166667 </v>
+  </varray>
+ </kpoints>
+ <parameters>
+  <separator name="general" >
+   <i type="string" name="SYSTEM">transition_metal</i>
+   <i type="logical" name="LCOMPAT"> F  </i>
+  </separator>
+  <separator name="electronic" >
+   <i type="string" name="PREC">accura</i>
+   <i name="ENMAX">    400.00000000</i>
+   <i name="ENAUG">    605.39200000</i>
+   <i name="EDIFF">      0.00000100</i>
+   <i type="int" name="IALGO">    68</i>
+   <i type="int" name="IWAVPR">    11</i>
+   <i type="int" name="NBANDS">   152</i>
+   <i type="int" name="NBANDSLOW">    -1</i>
+   <i type="int" name="NBANDSHIGH">    -1</i>
+   <i name="NELECT">    251.00000000</i>
+   <i type="int" name="TURBO">     0</i>
+   <i type="int" name="IRESTART">     0</i>
+   <i type="int" name="NREBOOT">     0</i>
+   <i type="int" name="NMIN">     0</i>
+   <i name="EREF">      0.00000000</i>
+   <separator name="electronic smearing" >
+    <i type="int" name="ISMEAR">     0</i>
+    <i name="SIGMA">      0.10000000</i>
+    <i name="KSPACING">      0.50000000</i>
+    <i type="logical" name="KGAMMA"> T  </i>
+    <i type="logical" name="KBLOWUP"> T  </i>
+   </separator>
+   <separator name="electronic projectors" >
+    <i type="logical" name="LREAL"> T  </i>
+    <v name="ROPT">     -0.00025000     -0.00025000     -0.00025000</v>
+    <i type="int" name="LMAXPAW">  -100</i>
+    <i type="int" name="LMAXMIX">     2</i>
+    <i type="logical" name="NLSPLINE"> F  </i>
+   </separator>
+   <separator name="electronic startup" >
+    <i type="int" name="ISTART">     0</i>
+    <i type="int" name="ICHARG">     2</i>
+    <i type="int" name="INIWAV">     1</i>
+   </separator>
+   <separator name="electronic spin" >
+    <i type="int" name="ISPIN">     1</i>
+    <i type="logical" name="LNONCOLLINEAR"> F  </i>
+    <v name="MAGMOM">      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000</v>
+    <i name="NUPDOWN">     -1.00000000</i>
+    <i type="logical" name="LSORBIT"> F  </i>
+    <v name="SAXIS">      0.00000000      0.00000000      1.00000000</v>
+    <i type="logical" name="LSPIRAL"> F  </i>
+    <v name="QSPIRAL">      0.00000000      0.00000000      0.00000000</v>
+    <i type="logical" name="LZEROZ"> F  </i>
+   </separator>
+   <separator name="electronic exchange-correlation" >
+    <i type="logical" name="LASPH"> F  </i>
+    <i type="logical" name="LMETAGGA"> F  </i>
+   </separator>
+   <separator name="electronic convergence" >
+    <i type="int" name="NELM">    60</i>
+    <i type="int" name="NELMDL">   -12</i>
+    <i type="int" name="NELMIN">     4</i>
+    <i name="ENINI">    400.00000000</i>
+    <separator name="electronic convergence detail" >
+     <i type="logical" name="LDIAG"> T  </i>
+     <i type="logical" name="LSUBROT"> F  </i>
+     <i name="WEIMIN">      0.00100000</i>
+     <i name="EBREAK">      0.00000000</i>
+     <i name="DEPER">      0.30000000</i>
+     <i type="int" name="NRMM">     4</i>
+     <i name="TIME">      0.40000000</i>
+    </separator>
+   </separator>
+   <separator name="electronic mixer" >
+    <i name="AMIX">      0.40000000</i>
+    <i name="BMIX">      1.00000000</i>
+    <i name="AMIN">      0.10000000</i>
+    <i name="AMIX_MAG">      1.60000000</i>
+    <i name="BMIX_MAG">      1.00000000</i>
+    <separator name="electronic mixer details" >
+     <i type="int" name="IMIX">     4</i>
+     <i type="logical" name="MIXFIRST"> F  </i>
+     <i type="int" name="MAXMIX">   -45</i>
+     <i name="WC">    100.00000000</i>
+     <i type="int" name="INIMIX">     1</i>
+     <i type="int" name="MIXPRE">     1</i>
+     <i type="int" name="MREMOVE">     5</i>
+    </separator>
+   </separator>
+   <separator name="electronic dipolcorrection" >
+    <i type="logical" name="LDIPOL"> T  </i>
+    <i type="logical" name="LMONO"> F  </i>
+    <i type="int" name="IDIPOL">     3</i>
+    <i name="EPSILON">      1.00000000</i>
+    <v name="DIPOL">   -100.00000000   -100.00000000   -100.00000000</v>
+    <i name="EFIELD">      0.00000000</i>
+   </separator>
+  </separator>
+  <separator name="grids" >
+   <i type="int" name="NGX">    54</i>
+   <i type="int" name="NGY">    54</i>
+   <i type="int" name="NGZ">   140</i>
+   <i type="int" name="NGXF">   108</i>
+   <i type="int" name="NGYF">   108</i>
+   <i type="int" name="NGZF">   280</i>
+   <i type="logical" name="ADDGRID"> F  </i>
+  </separator>
+  <separator name="ionic" >
+   <i type="int" name="NSW">   100</i>
+   <i type="int" name="IBRION">     3</i>
+   <i type="int" name="MDALGO">     0</i>
+   <i type="int" name="ISIF">     0</i>
+   <i name="PSTRESS">      0.00000000</i>
+   <i name="EDIFFG">     -0.02000000</i>
+   <i type="int" name="NFREE">     0</i>
+   <i name="POTIM">      0.01000000</i>
+   <i name="SMASS">     -3.00000000</i>
+   <i name="SCALEE">      1.00000000</i>
+  </separator>
+  <separator name="ionic md" >
+   <i name="TEBEG">      0.00010000</i>
+   <i name="TEEND">      0.00010000</i>
+   <i type="int" name="NBLOCK">     1</i>
+   <i type="int" name="KBLOCK">   100</i>
+   <i type="int" name="NPACO">   256</i>
+   <i name="APACO">     10.00000000</i>
+  </separator>
+  <separator name="symmetry" >
+   <i type="int" name="ISYM">     0</i>
+   <i name="SYMPREC">      0.00001000</i>
+  </separator>
+  <separator name="dos" >
+   <i type="int" name="LORBIT">     0</i>
+   <v name="RWIGS">     -1.00000000     -1.00000000     -1.00000000</v>
+   <i type="int" name="NEDOS">   301</i>
+   <i name="EMIN">     10.00000000</i>
+   <i name="EMAX">    -10.00000000</i>
+   <i name="EFERMI">      0.00000000</i>
+  </separator>
+  <separator name="writing" >
+   <i type="int" name="NWRITE">     2</i>
+   <i type="logical" name="LWAVE"> T  </i>
+   <i type="logical" name="LDOWNSAMPLE"> F  </i>
+   <i type="logical" name="LCHARG"> F  </i>
+   <i type="logical" name="LPARD"> F  </i>
+   <i type="logical" name="LVTOT"> F  </i>
+   <i type="logical" name="LVHAR"> F  </i>
+   <i type="logical" name="LELF"> F  </i>
+   <i type="logical" name="LOPTICS"> F  </i>
+   <v name="STM">      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000</v>
+  </separator>
+  <separator name="performance" >
+   <i type="int" name="NPAR">     4</i>
+   <i type="int" name="NSIM">     4</i>
+   <i type="int" name="NBLK">    -1</i>
+   <i type="logical" name="LPLANE"> T  </i>
+   <i type="logical" name="LSCALAPACK"> T  </i>
+   <i type="logical" name="LSCAAWARE"> F  </i>
+   <i type="logical" name="LSCALU"> F  </i>
+   <i type="logical" name="LASYNC"> F  </i>
+   <i type="logical" name="LORBITALREAL"> F  </i>
+  </separator>
+  <separator name="miscellaneous" >
+   <i type="int" name="IDIOT">     3</i>
+   <i type="int" name="PHON_NSTRUCT">    -1</i>
+   <i type="logical" name="LMUSIC"> F  </i>
+   <v name="POMASS">    102.90600000     16.00000000      1.00000000</v>
+   <v name="DARWINR">      0.00000000      0.00000000      0.00000000</v>
+   <v name="DARWINV">      1.00000000      1.00000000      1.00000000</v>
+   <i type="logical" name="LCORR"> T  </i>
+  </separator>
+  <i type="logical" name="GGA_COMPAT"> T  </i>
+  <i type="logical" name="LBERRY"> F  </i>
+  <i type="int" name="ICORELEVEL">     0</i>
+  <i type="logical" name="LDAU"> F  </i>
+  <i type="int" name="I_CONSTRAINED_M">     0</i>
+  <separator name="electronic exchange-correlation" >
+   <i type="string" name="GGA">--</i>
+   <i type="int" name="VOSKOWN">     0</i>
+   <i type="logical" name="LHFCALC"> F  </i>
+   <i type="string" name="PRECFOCK"></i>
+   <i type="logical" name="LSYMGRAD"> F  </i>
+   <i type="logical" name="LHFONE"> F  </i>
+   <i type="logical" name="LRHFCALC"> F  </i>
+   <i type="logical" name="LTHOMAS"> F  </i>
+   <i type="logical" name="LMODELHF"> F  </i>
+   <i type="logical" name="LFOCKACE"> F  </i>
+   <i name="ENCUT4O">     -1.00000000</i>
+   <i type="int" name="EXXOEP">     0</i>
+   <i type="int" name="FOURORBIT">     0</i>
+   <i name="AEXX">      0.00000000</i>
+   <i name="HFALPHA">      0.00000000</i>
+   <i name="MCALPHA">      0.00000000</i>
+   <i name="ALDAX">      1.00000000</i>
+   <i name="AGGAX">      1.00000000</i>
+   <i name="ALDAC">      1.00000000</i>
+   <i name="AGGAC">      1.00000000</i>
+   <i type="int" name="NKREDX">     1</i>
+   <i type="int" name="NKREDY">     1</i>
+   <i type="int" name="NKREDZ">     1</i>
+   <i type="logical" name="SHIFTRED"> F  </i>
+   <i type="logical" name="ODDONLY"> F  </i>
+   <i type="logical" name="EVENONLY"> F  </i>
+   <i type="int" name="LMAXFOCK">     0</i>
+   <i type="int" name="NMAXFOCKAE">     0</i>
+   <i type="logical" name="LFOCKAEDFT"> F  </i>
+   <i name="HFSCREEN">      0.00000000</i>
+   <i name="HFSCREENC">      0.00000000</i>
+   <i type="int" name="NBANDSGWLOW">     0</i>
+  </separator>
+  <separator name="vdW DFT" >
+   <i type="logical" name="LUSE_VDW"> F  </i>
+   <i type="int" name="IVDW_NL">     1</i>
+   <i type="logical" name="LSPIN_VDW"> F  </i>
+   <i name="Zab_VDW">     -0.84910000</i>
+   <i name="PARAM1">      0.12340000</i>
+   <i name="PARAM2">      1.00000000</i>
+   <i name="PARAM3">      0.00000000</i>
+  </separator>
+  <separator name="model GW" >
+   <i type="int" name="MODEL_GW">     0</i>
+   <i name="MODEL_EPS0">     22.94626584</i>
+   <i name="MODEL_ALPHA">      1.00000000</i>
+  </separator>
+  <separator name="linear response parameters" >
+   <i type="logical" name="LEPSILON"> F  </i>
+   <i type="logical" name="LRPA"> F  </i>
+   <i type="logical" name="LNABLA"> F  </i>
+   <i type="logical" name="LVEL"> F  </i>
+   <i name="CSHIFT">      0.10000000</i>
+   <i name="OMEGAMAX">     -1.00000000</i>
+   <i name="DEG_THRESHOLD">      0.00200000</i>
+   <i name="RTIME">     -0.10000000</i>
+   <i name="WPLASMAI">      0.00000000</i>
+   <v name="DFIELD">      0.00000000      0.00000000      0.00000000</v>
+   <v name="WPLASMA">      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000      0.00000000</v>
+  </separator>
+  <separator name="orbital magnetization" >
+   <i type="logical" name="NUCIND"> F  </i>
+   <v name="MAGPOS">      0.00000000      0.00000000      0.00000000</v>
+   <i type="logical" name="LNICSALL"> T  </i>
+   <i type="logical" name="ORBITALMAG"> F  </i>
+   <i type="logical" name="LMAGBLOCH"> F  </i>
+   <i type="logical" name="LCHIMAG"> F  </i>
+   <i type="logical" name="LGAUGE"> T  </i>
+   <i type="int" name="MAGATOM">     0</i>
+   <v name="MAGDIPOL">      0.00000000      0.00000000      0.00000000</v>
+   <v name="AVECCONST">      0.00000000      0.00000000      0.00000000</v>
+  </separator>
+  <separator name="response functions" >
+   <i type="logical" name="LALL_IN_ONE"> F  </i>
+   <i type="int" name="IALL_IN_ONE">    -1</i>
+   <i type="int" name="NBANDS_WAVE">    -1</i>
+   <i type="logical" name="LFINITE_TEMPERATURE"> F  </i>
+   <i type="logical" name="LADDER"> F  </i>
+   <i type="logical" name="LRPAFORCE"> F  </i>
+   <i type="logical" name="LFXC"> F  </i>
+   <i type="logical" name="LHARTREE"> T  </i>
+   <i type="int" name="IBSE">     0</i>
+   <v type="int" name="KPOINT">    -1     0     0     0</v>
+   <i type="logical" name="LTCTC"> F  </i>
+   <i type="logical" name="LTCTE"> F  </i>
+   <i type="logical" name="LTETE"> F  </i>
+   <i type="logical" name="LTRIPLET"> F  </i>
+   <i type="logical" name="LFXCEPS"> F  </i>
+   <i type="logical" name="LFXHEG"> F  </i>
+   <i type="int" name="NATURALO">     2</i>
+   <i type="logical" name="LHOLEGF"> F  </i>
+   <i type="logical" name="L2ORDER"> F  </i>
+   <i type="logical" name="LDMP1"> F  </i>
+   <i type="logical" name="LMP2LT"> F  </i>
+   <i type="logical" name="LSMP2LT"> F  </i>
+   <i type="logical" name="LGWLF"> F  </i>
+   <i name="ENCUTGW">     -1.60000002</i>
+   <i name="ENCUTGWSOFT">     -1.60000002</i>
+   <i name="ENCUTLF">     -1.00000000</i>
+   <i type="logical" name="LESF_SPLINES"> F  </i>
+   <i type="int" name="LMAXMP2">    -1</i>
+   <i name="SCISSOR">      0.00000000</i>
+   <i type="int" name="NOMEGA">     0</i>
+   <i type="int" name="NOMEGAR">     0</i>
+   <i type="int" name="NBANDSGW">    -1</i>
+   <i type="int" name="NBANDSO">    -1</i>
+   <i type="int" name="NBANDSV">    -1</i>
+   <i type="int" name="NELMGW">     1</i>
+   <i type="int" name="NELMHF">     1</i>
+   <i type="int" name="DIM">     3</i>
+   <i type="int" name="IESPILON">     4</i>
+   <i type="int" name="ANTIRES">     0</i>
+   <i name="OMEGAMAX">    -30.00000000</i>
+   <i name="OMEGAMIN">    -30.00000000</i>
+   <i name="OMEGATL">   -200.00000000</i>
+   <i type="int" name="OMEGAGRID">     0</i>
+   <i name="CSHIFT">     -0.10000000</i>
+   <i type="logical" name="LSELFENERGY"> F  </i>
+   <i type="logical" name="LSPECTRAL"> F  </i>
+   <i type="logical" name="LSPECTRALGW"> F  </i>
+   <i type="logical" name="LSINGLES"> F  </i>
+   <i type="logical" name="LFERMIGW"> F  </i>
+   <i type="logical" name="ODDONLYGW"> F  </i>
+   <i type="logical" name="EVENONLYGW"> F  </i>
+   <i type="int" name="NKREDLFX">     1</i>
+   <i type="int" name="NKREDLFY">     1</i>
+   <i type="int" name="NKREDLFZ">     1</i>
+   <i type="int" name="MAXMEM">  2800</i>
+   <i type="int" name="TELESCOPE">     0</i>
+   <i type="int" name="NTAUPAR">    -1</i>
+   <i type="int" name="NOMEGAPAR">    -1</i>
+   <i name="DAMP_NEWTON">      0.80000001</i>
+   <i name="LAMBDA">      1.00000000</i>
+  </separator>
+  <separator name="External order field" >
+   <i name="OFIELD_KAPPA">      0.00000000</i>
+   <v name="OFIELD_K">      0.00000000      0.00000000      0.00000000</v>
+   <i name="OFIELD_Q6_NEAR">      0.00000000</i>
+   <i name="OFIELD_Q6_FAR">      0.00000000</i>
+   <i name="OFIELD_A">      0.00000000</i>
+  </separator>
+  <separator name="optional k-points parameters" >
+   <i type="int" name="KPOINTS_OPT_MODE">     1</i>
+   <i type="logical" name="LKPOINTS_OPT"> F  </i>
+  </separator>
+ </parameters>
+ <atominfo>
+  <atoms>      30 </atoms>
+  <types>       3 </types>
+  <array name="atoms" >
+   <dimension dim="1">ion</dimension>
+   <field type="string">element</field>
+   <field type="int">atomtype</field>
+   <set>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>Rh</c><c>   1</c></rc>
+    <rc><c>O </c><c>   2</c></rc>
+    <rc><c>H </c><c>   3</c></rc>
+    <rc><c>H </c><c>   3</c></rc>
+   </set>
+  </array>
+  <array name="atomtypes" >
+   <dimension dim="1">type</dimension>
+   <field type="int">atomspertype</field>
+   <field type="string">element</field>
+   <field>mass</field>
+   <field>valence</field>
+   <field type="string">pseudopotential</field>
+   <set>
+    <rc><c>  27</c><c>Rh</c><c>    102.90600000</c><c>      9.00000000</c><c>  PAW_PBE Rh 04Feb2005                  </c></rc>
+    <rc><c>   1</c><c>O </c><c>     16.00000000</c><c>      6.00000000</c><c>  PAW_PBE O 08Apr2002                   </c></rc>
+    <rc><c>   2</c><c>H </c><c>      1.00000000</c><c>      1.00000000</c><c>  PAW_PBE H 15Jun2001                   </c></rc>
+   </set>
+  </array>
+ </atominfo>
+ <structure name="initialpos" >
+  <crystal>
+   <varray name="basis" >
+    <v>       8.06101731       0.00000000       0.00000000 </v>
+    <v>       4.03050865       6.98104577       0.00000000 </v>
+    <v>       0.00000000       0.00000000      20.38786205 </v>
+   </varray>
+   <i name="volume">   1147.31329181 </i>
+   <varray name="rec_basis" >
+    <v>       0.12405382      -0.07162251       0.00000000 </v>
+    <v>       0.00000000       0.14324501       0.00000000 </v>
+    <v>       0.00000000       0.00000000       0.04904879 </v>
+   </varray>
+  </crystal>
+  <varray name="positions" >
+   <v>       0.11111111       0.11111111       0.00000000 </v>
+   <v>       0.44444444       0.11111111       0.00000000 </v>
+   <v>       0.77777778       0.11111111       0.00000000 </v>
+   <v>       0.11111111       0.44444444       0.00000000 </v>
+   <v>       0.44444444       0.44444444       0.00000000 </v>
+   <v>       0.77777778       0.44444444       0.00000000 </v>
+   <v>       0.11111111       0.77777778       0.00000000 </v>
+   <v>       0.44444444       0.77777778       0.00000000 </v>
+   <v>       0.77777778       0.77777778       0.00000000 </v>
+   <v>       0.88888889       0.22222222       0.10760967 </v>
+   <v>       0.22222222       0.22222222       0.10760967 </v>
+   <v>       0.55555556       0.22222222       0.10760967 </v>
+   <v>       0.88888889       0.55555556       0.10760967 </v>
+   <v>       0.22222222       0.55555556       0.10760967 </v>
+   <v>       0.55555556       0.55555556       0.10760967 </v>
+   <v>       0.88888889       0.88888889       0.10760967 </v>
+   <v>       0.22222222       0.88888889       0.10760967 </v>
+   <v>       0.55555556       0.88888889       0.10760967 </v>
+   <v>       0.00000000       0.00000000       0.21521933 </v>
+   <v>       0.33333333       0.00000000       0.21521933 </v>
+   <v>       0.66666667       0.00000000       0.21521933 </v>
+   <v>       0.00000000       0.33333333       0.21521933 </v>
+   <v>       0.33333333       0.33333333       0.21521933 </v>
+   <v>       0.66666667       0.33333333       0.21521933 </v>
+   <v>       0.00000000       0.66666667       0.21521933 </v>
+   <v>       0.33333333       0.66666667       0.21521933 </v>
+   <v>       0.66666667       0.66666667       0.21521933 </v>
+   <v>       0.30094930       0.48590511       0.30031816 </v>
+   <v>       0.41078590       0.41333798       0.32945225 </v>
+   <v>       0.45778287       0.10033228       0.26532617 </v>
+  </varray>
+  <varray name="selective"  type="logical" >
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  F  F  F </v>
+   <v type="logical" >  T  T  T </v>
+   <v type="logical" >  T  T  T </v>
+   <v type="logical" >  T  T  T </v>
+  </varray>
+  <nose>
+   <v>      -3.00000000       0.00000000       0.00010000       0.00010000 </v>
+  </nose>
+ </structure>
+ <calculation>
+  <scstep>
+   <time name="dav">   23.93   24.16</time>
+   <time name="total">   24.08   24.32</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="alphaZ">    370.14782256 </i>
+    <i name="ewald">  60209.01255190 </i>
+    <i name="hartreedc"> -77842.82004989 </i>
+    <i name="XCdc">   -426.00979108 </i>
+    <i name="pawpsdc">  16714.59493800 </i>
+    <i name="pawaedc"> -15584.10000776 </i>
+    <i name="eentropy">     -0.07613093 </i>
+    <i name="bandstr">    876.29743697 </i>
+    <i name="atom">  17100.43785993 </i>
+    <i name="e_fr_energy">   1417.48462970 </i>
+    <i name="e_wo_entrp">   1417.56076064 </i>
+    <i name="e_0_energy">   1417.52269517 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   25.87   26.08</time>
+   <time name="total">   25.87   26.08</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">    -95.93760383 </i>
+    <i name="e_wo_entrp">    -95.75345728 </i>
+    <i name="e_0_energy">    -95.84553056 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   30.88   31.13</time>
+   <time name="total">   30.88   31.13</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -203.75534932 </i>
+    <i name="e_wo_entrp">   -203.56031333 </i>
+    <i name="e_0_energy">   -203.65783132 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   30.76   31.00</time>
+   <time name="total">   30.76   31.01</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -210.80116724 </i>
+    <i name="e_wo_entrp">   -210.60303815 </i>
+    <i name="e_0_energy">   -210.70210270 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   30.76   31.00</time>
+   <time name="total">   30.76   31.00</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.09937975 </i>
+    <i name="e_wo_entrp">   -210.89880948 </i>
+    <i name="e_0_energy">   -210.99909461 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   31.97   32.22</time>
+   <time name="total">   31.98   32.23</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11485301 </i>
+    <i name="e_wo_entrp">   -210.91393129 </i>
+    <i name="e_0_energy">   -211.01439215 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   31.05   31.29</time>
+   <time name="total">   31.05   31.29</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11588078 </i>
+    <i name="e_wo_entrp">   -210.91490592 </i>
+    <i name="e_0_energy">   -211.01539335 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   31.38   31.62</time>
+   <time name="total">   31.38   31.63</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11598171 </i>
+    <i name="e_wo_entrp">   -210.91499143 </i>
+    <i name="e_0_energy">   -211.01548657 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   22.64   22.82</time>
+   <time name="total">   22.64   22.82</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11598814 </i>
+    <i name="e_wo_entrp">   -210.91499583 </i>
+    <i name="e_0_energy">   -211.01549198 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   20.49   20.65</time>
+   <time name="total">   20.49   20.65</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11598846 </i>
+    <i name="e_wo_entrp">   -210.91499604 </i>
+    <i name="e_0_energy">   -211.01549225 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   17.62   17.75</time>
+   <time name="total">   17.62   17.76</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11598848 </i>
+    <i name="e_wo_entrp">   -210.91499606 </i>
+    <i name="e_0_energy">   -211.01549227 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="dav">   16.96   17.09</time>
+   <time name="total">   18.51   18.66</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.00001167 </v>
+    <i name="Tr[quadrupol]">  -2721.83097838 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -211.11598849 </i>
+    <i name="e_wo_entrp">   -210.91499606 </i>
+    <i name="e_0_energy">   -211.01549228 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.44    4.47</time>
+   <time name="diis">   15.61   15.75</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.10   22.29</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000       0.19648940 </v>
+    <i name="Tr[quadrupol]">  -2723.59433252 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -198.48855126 </i>
+    <i name="e_wo_entrp">   -198.25962855 </i>
+    <i name="e_0_energy">   -198.37408991 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.41    4.45</time>
+   <time name="diis">   18.62   18.78</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   24.99   25.21</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -1.88847067 </v>
+    <i name="Tr[quadrupol]">  -2724.94366416 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -295.08434249 </i>
+    <i name="e_wo_entrp">   -294.91945555 </i>
+    <i name="e_0_energy">   -295.00189902 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.41    4.44</time>
+   <time name="diis">   15.51   15.65</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   21.94   22.13</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.35982909 </v>
+    <i name="Tr[quadrupol]">  -2726.72392045 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -203.14865631 </i>
+    <i name="e_wo_entrp">   -202.93312393 </i>
+    <i name="e_0_energy">   -203.04089012 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.44</time>
+   <time name="diis">   15.40   15.54</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   21.84   22.03</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.22323624 </v>
+    <i name="Tr[quadrupol]">  -2726.30349271 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -199.15971872 </i>
+    <i name="e_wo_entrp">   -198.93677481 </i>
+    <i name="e_0_energy">   -199.04824677 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.44</time>
+   <time name="diis">   15.81   15.95</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.27   22.45</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.19166130 </v>
+    <i name="Tr[quadrupol]">  -2726.85340060 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -197.16398048 </i>
+    <i name="e_wo_entrp">   -196.95213873 </i>
+    <i name="e_0_energy">   -197.05805960 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.38    4.42</time>
+   <time name="diis">   16.01   16.15</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.39   22.58</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.16709393 </v>
+    <i name="Tr[quadrupol]">  -2727.18912792 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.63604496 </i>
+    <i name="e_wo_entrp">   -196.41526897 </i>
+    <i name="e_0_energy">   -196.52565697 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.43    4.47</time>
+   <time name="diis">   16.80   16.95</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   23.22   23.41</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.12047210 </v>
+    <i name="Tr[quadrupol]">  -2727.66727319 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.53049263 </i>
+    <i name="e_wo_entrp">   -196.30835471 </i>
+    <i name="e_0_energy">   -196.41942367 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.46</time>
+   <time name="diis">   16.11   16.25</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.54   22.73</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.12756383 </v>
+    <i name="Tr[quadrupol]">  -2727.96143667 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.37857386 </i>
+    <i name="e_wo_entrp">   -196.15149589 </i>
+    <i name="e_0_energy">   -196.26503488 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.45</time>
+   <time name="diis">   16.32   16.47</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.74   22.93</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.10450837 </v>
+    <i name="Tr[quadrupol]">  -2728.17180700 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.40745258 </i>
+    <i name="e_wo_entrp">   -196.18615907 </i>
+    <i name="e_0_energy">   -196.29680582 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.39    4.42</time>
+   <time name="diis">   15.52   15.65</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   21.89   22.08</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.12639560 </v>
+    <i name="Tr[quadrupol]">  -2728.54549832 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.36121524 </i>
+    <i name="e_wo_entrp">   -196.13806319 </i>
+    <i name="e_0_energy">   -196.24963922 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.43    4.46</time>
+   <time name="diis">   16.20   16.35</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.62   22.81</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.11506824 </v>
+    <i name="Tr[quadrupol]">  -2728.62749568 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.35165877 </i>
+    <i name="e_wo_entrp">   -196.12948408 </i>
+    <i name="e_0_energy">   -196.24057142 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.44    4.47</time>
+   <time name="diis">   16.38   16.52</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.81   23.01</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.11030632 </v>
+    <i name="Tr[quadrupol]">  -2728.78937449 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34653538 </i>
+    <i name="e_wo_entrp">   -196.12300295 </i>
+    <i name="e_0_energy">   -196.23476916 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.45</time>
+   <time name="diis">   16.50   16.65</time>
+   <time name="orth">    0.34    0.34</time>
+   <time name="total">   22.91   23.11</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.10073814 </v>
+    <i name="Tr[quadrupol]">  -2728.92072592 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34330680 </i>
+    <i name="e_wo_entrp">   -196.11938477 </i>
+    <i name="e_0_energy">   -196.23134578 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.45    4.48</time>
+   <time name="diis">   16.64   16.79</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   23.09   23.29</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.09404565 </v>
+    <i name="Tr[quadrupol]">  -2729.17661957 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34304154 </i>
+    <i name="e_wo_entrp">   -196.11857000 </i>
+    <i name="e_0_energy">   -196.23080577 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.43    4.46</time>
+   <time name="diis">   16.42   16.57</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.84   23.04</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.08313390 </v>
+    <i name="Tr[quadrupol]">  -2729.30992168 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34153751 </i>
+    <i name="e_wo_entrp">   -196.11724268 </i>
+    <i name="e_0_energy">   -196.22939010 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.43</time>
+   <time name="diis">   16.86   17.01</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   23.28   23.48</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07570014 </v>
+    <i name="Tr[quadrupol]">  -2729.50421724 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34187561 </i>
+    <i name="e_wo_entrp">   -196.11714609 </i>
+    <i name="e_0_energy">   -196.22951085 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.43</time>
+   <time name="diis">   16.54   16.69</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.92   23.12</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06884732 </v>
+    <i name="Tr[quadrupol]">  -2729.64741978 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34224973 </i>
+    <i name="e_wo_entrp">   -196.11798716 </i>
+    <i name="e_0_energy">   -196.23011844 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.45</time>
+   <time name="diis">   18.21   18.38</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   24.60   24.82</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06785944 </v>
+    <i name="Tr[quadrupol]">  -2729.68926763 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34227067 </i>
+    <i name="e_wo_entrp">   -196.11785838 </i>
+    <i name="e_0_energy">   -196.23006452 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.41    4.44</time>
+   <time name="diis">   15.65   15.79</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.03   22.22</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06772100 </v>
+    <i name="Tr[quadrupol]">  -2729.76364933 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34256082 </i>
+    <i name="e_wo_entrp">   -196.11833215 </i>
+    <i name="e_0_energy">   -196.23044648 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.44</time>
+   <time name="diis">   17.42   17.59</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   23.82   24.05</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06593435 </v>
+    <i name="Tr[quadrupol]">  -2729.99329581 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34323516 </i>
+    <i name="e_wo_entrp">   -196.11901787 </i>
+    <i name="e_0_energy">   -196.23112652 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.43    4.46</time>
+   <time name="diis">   16.11   16.26</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.59   22.78</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06734897 </v>
+    <i name="Tr[quadrupol]">  -2730.13673592 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34338088 </i>
+    <i name="e_wo_entrp">   -196.11916865 </i>
+    <i name="e_0_energy">   -196.23127476 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.44</time>
+   <time name="diis">   16.42   16.61</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   22.84   23.10</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06776618 </v>
+    <i name="Tr[quadrupol]">  -2730.19824669 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34334011 </i>
+    <i name="e_wo_entrp">   -196.11914819 </i>
+    <i name="e_0_energy">   -196.23124415 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.43    4.46</time>
+   <time name="diis">   16.08   16.23</time>
+   <time name="orth">    0.34    0.34</time>
+   <time name="total">   22.49   22.69</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06700986 </v>
+    <i name="Tr[quadrupol]">  -2730.22909561 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34334557 </i>
+    <i name="e_wo_entrp">   -196.11913757 </i>
+    <i name="e_0_energy">   -196.23124157 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.41    4.44</time>
+   <time name="diis">   17.86   18.02</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   24.29   24.50</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06676945 </v>
+    <i name="Tr[quadrupol]">  -2730.29601571 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34349395 </i>
+    <i name="e_wo_entrp">   -196.11926019 </i>
+    <i name="e_0_energy">   -196.23137707 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.45</time>
+   <time name="diis">   21.67   21.87</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   28.10   28.35</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.05582709 </v>
+    <i name="Tr[quadrupol]">  -2730.26310067 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34401057 </i>
+    <i name="e_wo_entrp">   -196.11973736 </i>
+    <i name="e_0_energy">   -196.23187397 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.43    4.46</time>
+   <time name="diis">   18.61   18.78</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   25.07   25.28</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.05147212 </v>
+    <i name="Tr[quadrupol]">  -2730.23308292 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34425117 </i>
+    <i name="e_wo_entrp">   -196.11996387 </i>
+    <i name="e_0_energy">   -196.23210752 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.45    4.48</time>
+   <time name="diis">   16.65   16.81</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   23.12   23.32</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04910931 </v>
+    <i name="Tr[quadrupol]">  -2730.21869082 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34442534 </i>
+    <i name="e_wo_entrp">   -196.12013705 </i>
+    <i name="e_0_energy">   -196.23228120 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.48    4.52</time>
+   <time name="diis">   20.32   20.50</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   26.81   27.05</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04801534 </v>
+    <i name="Tr[quadrupol]">  -2730.25089558 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34495874 </i>
+    <i name="e_wo_entrp">   -196.12068696 </i>
+    <i name="e_0_energy">   -196.23282285 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.45    4.49</time>
+   <time name="diis">   21.07   21.27</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   27.56   27.81</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04641342 </v>
+    <i name="Tr[quadrupol]">  -2730.26570872 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34572503 </i>
+    <i name="e_wo_entrp">   -196.12147108 </i>
+    <i name="e_0_energy">   -196.23359805 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.45    4.49</time>
+   <time name="diis">   17.58   17.74</time>
+   <time name="orth">    0.34    0.34</time>
+   <time name="total">   24.03   24.24</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04588529 </v>
+    <i name="Tr[quadrupol]">  -2730.27298274 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34614101 </i>
+    <i name="e_wo_entrp">   -196.12189865 </i>
+    <i name="e_0_energy">   -196.23401983 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.48    4.51</time>
+   <time name="diis">   20.44   20.63</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   26.93   27.17</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04506590 </v>
+    <i name="Tr[quadrupol]">  -2730.28679369 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34699727 </i>
+    <i name="e_wo_entrp">   -196.12277092 </i>
+    <i name="e_0_energy">   -196.23488410 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.45    4.48</time>
+   <time name="diis">   11.32   11.42</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   17.74   17.89</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04554758 </v>
+    <i name="Tr[quadrupol]">  -2730.28433381 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34666653 </i>
+    <i name="e_wo_entrp">   -196.12243217 </i>
+    <i name="e_0_energy">   -196.23454935 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.46    4.49</time>
+   <time name="diis">   24.21   24.44</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   30.68   30.96</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.04940742 </v>
+    <i name="Tr[quadrupol]">  -2730.27793707 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34500730 </i>
+    <i name="e_wo_entrp">   -196.12073964 </i>
+    <i name="e_0_energy">   -196.23287347 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.48    4.52</time>
+   <time name="diis">   23.48   23.70</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   30.01   30.28</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.05354704 </v>
+    <i name="Tr[quadrupol]">  -2730.28684053 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34434368 </i>
+    <i name="e_wo_entrp">   -196.12007594 </i>
+    <i name="e_0_energy">   -196.23220981 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.46    4.49</time>
+   <time name="diis">   21.99   22.19</time>
+   <time name="orth">    0.34    0.34</time>
+   <time name="total">   28.42   28.67</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.05716881 </v>
+    <i name="Tr[quadrupol]">  -2730.29495665 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34402049 </i>
+    <i name="e_wo_entrp">   -196.11976329 </i>
+    <i name="e_0_energy">   -196.23189189 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.39    4.43</time>
+   <time name="diis">   26.72   26.97</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   33.12   33.42</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06709162 </v>
+    <i name="Tr[quadrupol]">  -2730.33970588 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34402990 </i>
+    <i name="e_wo_entrp">   -196.11981409 </i>
+    <i name="e_0_energy">   -196.23192199 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.39    4.43</time>
+   <time name="diis">   15.46   15.59</time>
+   <time name="orth">    0.34    0.34</time>
+   <time name="total">   21.85   22.04</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.06985764 </v>
+    <i name="Tr[quadrupol]">  -2730.37820699 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34411078 </i>
+    <i name="e_wo_entrp">   -196.11990261 </i>
+    <i name="e_0_energy">   -196.23200669 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.37    4.41</time>
+   <time name="diis">   14.48   14.61</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   20.84   21.02</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07055342 </v>
+    <i name="Tr[quadrupol]">  -2730.40363362 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34409351 </i>
+    <i name="e_wo_entrp">   -196.11986872 </i>
+    <i name="e_0_energy">   -196.23198111 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.39    4.43</time>
+   <time name="diis">   14.96   15.09</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   21.38   21.56</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07198227 </v>
+    <i name="Tr[quadrupol]">  -2730.43056406 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34414605 </i>
+    <i name="e_wo_entrp">   -196.11991425 </i>
+    <i name="e_0_energy">   -196.23203015 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.39    4.43</time>
+   <time name="diis">   12.13   12.24</time>
+   <time name="orth">    0.34    0.34</time>
+   <time name="total">   18.51   18.67</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07269623 </v>
+    <i name="Tr[quadrupol]">  -2730.44957290 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34417359 </i>
+    <i name="e_wo_entrp">   -196.11993742 </i>
+    <i name="e_0_energy">   -196.23205550 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.41    4.44</time>
+   <time name="diis">   14.25   14.38</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   20.67   20.85</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07301348 </v>
+    <i name="Tr[quadrupol]">  -2730.45634312 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34420420 </i>
+    <i name="e_wo_entrp">   -196.11996366 </i>
+    <i name="e_0_energy">   -196.23208393 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.45</time>
+   <time name="diis">   10.00   10.09</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   16.41   16.55</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07326325 </v>
+    <i name="Tr[quadrupol]">  -2730.45864538 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34421729 </i>
+    <i name="e_wo_entrp">   -196.11997633 </i>
+    <i name="e_0_energy">   -196.23209681 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.46</time>
+   <time name="diis">   10.45   10.54</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   16.86   17.00</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07447836 </v>
+    <i name="Tr[quadrupol]">  -2730.58993326 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34422636 </i>
+    <i name="e_wo_entrp">   -196.11999146 </i>
+    <i name="e_0_energy">   -196.23210891 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.41    4.45</time>
+   <time name="diis">    8.88    8.96</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   15.26   15.40</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07453555 </v>
+    <i name="Tr[quadrupol]">  -2730.64476516 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34422828 </i>
+    <i name="e_wo_entrp">   -196.11999337 </i>
+    <i name="e_0_energy">   -196.23211083 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.40    4.44</time>
+   <time name="diis">    9.04    9.12</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   15.44   15.57</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07431945 </v>
+    <i name="Tr[quadrupol]">  -2730.66700399 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="e_fr_energy">   -196.34423029 </i>
+    <i name="e_wo_entrp">   -196.11999431 </i>
+    <i name="e_0_energy">   -196.23211230 </i>
+   </energy>
+  </scstep>
+  <scstep>
+   <time name="diag">    4.42    4.45</time>
+   <time name="diis">    8.68    8.75</time>
+   <time name="orth">    0.34    0.35</time>
+   <time name="total">   13.58   13.70</time>
+   <dipole>
+    <v name="dipole">      0.00000000       0.00000000      -0.07449933 </v>
+    <i name="Tr[quadrupol]">  -2730.67819632 </i>
+    <i name="Echarged">      0.00000000 </i>
+    <i name="Edipol_quadrupol">      0.00000000 </i>
+    <i name="Eion">      0.00000000 </i>
+   </dipole>
+   <energy>
+    <i name="alphaZ">    371.83194715 </i>
+    <i name="ewald">  60209.01255190 </i>
+    <i name="hartreedc"> -77880.12219132 </i>
+    <i name="XCdc">   -430.96727055 </i>
+    <i name="pawpsdc">  21599.97453597 </i>
+    <i name="pawaedc"> -20547.24301876 </i>
+    <i name="eentropy">     -0.22423472 </i>
+    <i name="bandstr">   -619.04440979 </i>
+    <i name="atom">  17100.43785993 </i>
+    <i name="e_fr_energy">   -196.34423019 </i>
+    <i name="e_wo_entrp">   -196.11999547 </i>
+    <i name="e_0_energy">   -196.23211283 </i>
+   </energy>
+  </scstep>
+  <structure>
+   <crystal>
+    <varray name="basis" >
+     <v>       8.06101731       0.00000000       0.00000000 </v>
+     <v>       4.03050865       6.98104577       0.00000000 </v>
+     <v>       0.00000000       0.00000000      20.38786205 </v>
+    </varray>
+    <i name="volume">   1147.31329181 </i>
+    <varray name="rec_basis" >
+     <v>       0.12405382      -0.07162251       0.00000000 </v>
+     <v>       0.00000000       0.14324501       0.00000000 </v>
+     <v>       0.00000000       0.00000000       0.04904879 </v>
+    </varray>
+   </crystal>
+   <varray name="positions" >
+    <v>       0.11111111       0.11111111       0.00000000 </v>
+    <v>       0.44444444       0.11111111       0.00000000 </v>
+    <v>       0.77777778       0.11111111       0.00000000 </v>
+    <v>       0.11111111       0.44444444       0.00000000 </v>
+    <v>       0.44444444       0.44444444       0.00000000 </v>
+    <v>       0.77777778       0.44444444       0.00000000 </v>
+    <v>       0.11111111       0.77777778       0.00000000 </v>
+    <v>       0.44444444       0.77777778       0.00000000 </v>
+    <v>       0.77777778       0.77777778       0.00000000 </v>
+    <v>       0.88888889       0.22222222       0.10760967 </v>
+    <v>       0.22222222       0.22222222       0.10760967 </v>
+    <v>       0.55555556       0.22222222       0.10760967 </v>
+    <v>       0.88888889       0.55555556       0.10760967 </v>
+    <v>       0.22222222       0.55555556       0.10760967 </v>
+    <v>       0.55555556       0.55555556       0.10760967 </v>
+    <v>       0.88888889       0.88888889       0.10760967 </v>
+    <v>       0.22222222       0.88888889       0.10760967 </v>
+    <v>       0.55555556       0.88888889       0.10760967 </v>
+    <v>       0.00000000       0.00000000       0.21521933 </v>
+    <v>       0.33333333       0.00000000       0.21521933 </v>
+    <v>       0.66666667       0.00000000       0.21521933 </v>
+    <v>       0.00000000       0.33333333       0.21521933 </v>
+    <v>       0.33333333       0.33333333       0.21521933 </v>
+    <v>       0.66666667       0.33333333       0.21521933 </v>
+    <v>       0.00000000       0.66666667       0.21521933 </v>
+    <v>       0.33333333       0.66666667       0.21521933 </v>
+    <v>       0.66666667       0.66666667       0.21521933 </v>
+    <v>       0.30094930       0.48590511       0.30031816 </v>
+    <v>       0.41078590       0.41333798       0.32945225 </v>
+    <v>       0.45778287       0.10033228       0.26532617 </v>
+   </varray>
+  </structure>
+  <varray name="forces" >
+   <v>      -0.12260417      -0.01997173       0.13873415 </v>
+   <v>      -0.02854461       0.04125170       0.28960022 </v>
+   <v>       0.04586117      -0.02524722       0.28819648 </v>
+   <v>      -0.00230471      -0.01062838       0.33755075 </v>
+   <v>      -0.00401930       0.02253257       0.30471485 </v>
+   <v>       0.02027283      -0.03371818       0.31252681 </v>
+   <v>       0.04631900      -0.03182638       0.20174148 </v>
+   <v>      -0.06101625       0.01097744       0.29976510 </v>
+   <v>       0.03477330      -0.00548526       0.32515295 </v>
+   <v>       0.03093937      -0.01080066      -0.09400015 </v>
+   <v>       0.12247166       0.01946096       0.13682407 </v>
+   <v>      -0.06130748      -0.00599789      -0.10016164 </v>
+   <v>       0.02360434       0.05248068       0.05793106 </v>
+   <v>      -0.00098061       0.00587018      -0.37592788 </v>
+   <v>      -0.02506599       0.06837907       0.00767490 </v>
+   <v>      -0.01397211      -0.04669129       0.02198295 </v>
+   <v>       0.06095929      -0.12023497       0.27766545 </v>
+   <v>       0.02172870      -0.03710283      -0.07417727 </v>
+   <v>      -0.01869460       0.15203007      -0.36347833 </v>
+   <v>      -0.29104351      -0.20326443      -0.19671640 </v>
+   <v>       0.45173163      -0.36278647      -0.16809795 </v>
+   <v>      -0.28472144       0.02534427      -0.38996705 </v>
+   <v>      -0.15756143       0.39599015       0.15231926 </v>
+   <v>       0.50013925      -0.13326849      -0.52687119 </v>
+   <v>      -0.33093695       0.19650150      -0.51693568 </v>
+   <v>      -0.23197149      -0.11678203       0.17051692 </v>
+   <v>       0.10236902      -0.16734672      -0.34155129 </v>
+   <v>       0.26643482       0.27878027      -0.12330812 </v>
+   <v>       0.05470560       0.06434007       0.00354193 </v>
+   <v>      -0.14756531      -0.00278602      -0.05524634 </v>
+  </varray>
+  <energy>
+   <i name="e_fr_energy">   -196.34423019 </i>
+   <i name="e_wo_entrp">   -196.11999547 </i>
+   <i name="e_0_energy">   -196.23211283 </i>
+  </energy>
