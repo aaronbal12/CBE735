@@ -19,7 +19,7 @@ PREC     = Accurate
 ISYM     = 0
 ISPIN    = 1 # 1: non-spin polarized
 
-NSW      = 100 # number of steps
+NSW      = 300 # number of steps (raised from 100)
 IBRION   = 3      # needed for VTST optimizers
 IOPT     = 7      # FIRE (VTST)
 POTIM    = 0      # 0 = let the VTST optimizer (IOPT) choose the step

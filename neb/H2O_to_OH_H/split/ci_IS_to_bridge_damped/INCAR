@@ -19,7 +19,7 @@ PREC     = Accurate
 ISYM     = 0
 ISPIN    = 1 # 1: non-spin polarized
 
-NSW      = 100 # number of steps
+NSW      = 300 # number of steps (raised from 100)
 IBRION   = 3
 POTIM    = 0.01
 EDIFFG   = -0.02

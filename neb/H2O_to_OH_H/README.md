@@ -4,14 +4,14 @@ Follows VASP Tutorial 2, slides 25-36.
 
 | dir  | what it is |
 |------|------------|
-| `IS/`  | H2O* on top: copy of `ads/H2O/top`. Lowest energy (E0 = -196.598 eV) and the only H2O site that converged |
-| `neb/` | `INCAR` = `files/INCAR_neb` (7 images, climbing off, EDIFFG -0.2) + `KPOINTS` |
-| `cineb/` | climbing-image NEB over the full path (superseded) |
-| `cineb_bridge/` | climbing-image NEB, IS -> OH* bridge + H* (the step with the TS) |
-| `neb_IS_to_bridge/` | same step as `cineb_bridge/`, done the slides' way: fresh 7-image `nebinit.py` band, regular NEB then CI |
-| `neb_bridge_to_fcc/` | second half of the split: OH* bridge + H* -> OH* fcc + H* (3 images, 3 nodes) |
-| `ci_IS_to_bridge_damped/` | CI restart of `neb_IS_to_bridge/` with the slides' optimizer (damped MD, POTIM 0.01) |
-| `ci_IS_to_bridge_fire/` | the same CI restart with VTST FIRE (IOPT 7, POTIM 0) |
+| `full/neb/` | regular NEB over the full path, IS -> OH* fcc + H* (7 images) |
+| `full/cineb/` | climbing-image NEB over the full path (superseded by the split) |
+| `split/neb_IS_to_bridge/` | IS -> OH* bridge + H* (the step with the TS): fresh 7-image `nebinit.py` band, regular NEB then CI run 1 |
+| `split/ci_IS_to_bridge_damped/` | CI restart of `neb_IS_to_bridge/` with the slides optimizer (damped MD, POTIM 0.01) |
+| `split/ci_IS_to_bridge_fire/` | the same CI restart with VTST FIRE (IOPT 7, POTIM 0) |
+| `split/neb_bridge_to_fcc/` | OH* bridge + H* -> OH* fcc + H* (3 images); converged, TS vib in `vib/TS_OH_bridge_fcc` |
+
+The IS is `ads/H2O/top` (E0 = -196.598 eV). `IS/` and `cineb_bridge/` (the failed 4-image run) were removed; they are in git history.
 
 **Final state:** OH* fcc + H* fcc co-adsorbed. It's relaxed as its own thermo job in `ads/OH_H`, so run that first.
 Its atom order matches IS (Rh x27, O, H that stays on O, H that leaves), which the interpolation needs.
@@ -179,7 +179,7 @@ The barrier is expected to be only a few hundredths of an eV, so it doesn't cont
 
 **Results:** the regular NEB (job 50078) converged in 2 steps. CI (job 50079) ran 100 steps without reaching 0.02. The final max forces are 01 0.032, 02 0.061 and 03 0.055 eV/A, still falling slowly.
 Energies above the bridge state: 01 0.03, 02 (climbing) **0.09**, 03 0.03 eV; FS -0.03 eV.
-After two more restarts (jobs 50114, 50135), CI converged: 02 = **0.088 eV**, all forces < 0.02. TS vib job: `vib/TS_OH_bridge_fcc`.
+After two more restarts (jobs 50114, 50135), CI converged: 02 = **0.088 eV**, all forces < 0.02. TS vib job `vib/TS_OH_bridge_fcc` (job 50162): exactly one imaginary mode, 264i cm-1, so image 02 is a true first-order saddle point.
 
 ## 8. Two CI restarts of `neb_IS_to_bridge/`: slides' optimizer vs FIRE
 In job 50112, image 04's real force along the path fell from 0.28 to 0.12 eV/A by step 50, then rose to 0.20 by step 100.
@@ -192,7 +192,7 @@ It overshot the peak, and the slides' damped MD (`IBRION = 3`, `POTIM = 0.01`) i
 
 Both use `EDIFFG = -0.02`, `LCLIMB = .TRUE.` and 7 nodes (112 cores). Submit both:
 ```bash
-cd neb/H2O_to_OH_H/ci_IS_to_bridge_damped
+cd neb/H2O_to_OH_H/split/ci_IS_to_bridge_damped
 cp ../../../ads/H2O/top/POTCAR .
 sbatch run_neb.sh
 cd ../ci_IS_to_bridge_fire
@@ -202,3 +202,8 @@ sbatch run_neb.sh
 Restart either one with `for d in 0[1-7]; do cp $d/CONTCAR $d/POSCAR; done` and `sbatch`.
 Track image 04's force along the path: `grep "projections on to tangent" 04/OUTCAR | awk 'NR%10==0{print NR,$NF}'`.
 Both should reach the same TS. Report the slides' result if it converges; FIRE is the fallback.
+
+**First attempt (jobs 50163, 50164): crashed after 1 step.** The folders were moved into `split/` while the jobs ran,
+so VASP couldn't find its own output files (`forrtl: severe (29): file not found ... XDATCAR`). It was not a convergence problem.
+`NSW` is now 300 in both folders. Resubmit from `split/` without restaging; the POSCARs are still the intended start.
+Don't move or rename a folder while its job is running. At about 3.5 min per step, 300 steps take about 18 h, which fits within the 24 h limit.
