@@ -207,3 +207,18 @@ Both should reach the same TS. Report the slides' result if it converges; FIRE i
 so VASP couldn't find its own output files (`forrtl: severe (29): file not found ... XDATCAR`). It was not a convergence problem.
 `NSW` is now 300 in both folders. Resubmit from `split/` without restaging; the POSCARs are still the intended start.
 Don't move or rename a folder while its job is running. At about 3.5 min per step, 300 steps take about 18 h, which fits within the 24 h limit.
+
+**Second attempt (jobs 50181 damped, 50182 FIRE; ran with NSW 100 because the force-push dropped the 300).**
+
+| image | 01 | 02 | 03 | 04 | 05 | 06 | 07 |
+|---|---|---|---|---|---|---|---|
+| damped: E - E(IS), eV | 0.02 | 0.16 | **0.96** | 0.69 | 0.77 | 0.74 | 0.45 |
+| damped: max force | 0.25 | 0.69 | 0.73 | 0.93 | 0.24 | 0.32 | 0.06 |
+| FIRE: E - E(IS), eV | 0.02 | 0.08 | 0.29 | **0.94** | 0.43 | 0.69 | 0.69 |
+| FIRE: max force | 0.15 | 0.06 | 0.20 | **0.07** | 0.11 | 0.23 | 0.44 |
+| FIRE: breaking O-H, A | 0.98 | 0.99 | 1.05 | 1.56 | 3.31 | 3.35 | 2.85 |
+
+- **damped:** the band fell apart. Forces grew in every middle image, the peak jumped from 04 to 03, the energy is no longer smooth (04 < 05 > 06), and the angle at 04 is 81 degrees. Don't continue it.
+- **FIRE:** the climbing image 04 is almost a stationary point. Its max force is 0.066 eV/A, its force along the path is 0.01-0.03, it sits at 0.94 eV, and the breaking O-H is 1.56 A.
+  The rest of the band is tangled: in 05-06 the H went past its final site (O-H 3.3 A vs 2.99 in the FS), and 06-07 sit at 0.69 eV, above the FS (0.25).
+- TS check: `vib/TS_H2O_to_OH_bridge` is a vib job on FIRE's image 04 CONTCAR. Exactly one imaginary mode (an O-H stretch) confirms the TS at about 0.94 eV, even with the rest of the band untidy.
